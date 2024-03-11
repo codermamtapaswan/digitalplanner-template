@@ -1,0 +1,489 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Nunito Sans;
+}
+
+:root {
+  --primary-color: #002737;
+  --secondry-color: #00212e;
+  --white: #fff;
+  --black: #000;
+  --btn-gradient: linear-gradient(212deg,
+      rgba(19, 204, 98, 1) 5%,
+      rgba(1, 125, 171, 1) 94%);
+
+
+  scroll-behavior: smooth;
+}
+
+
+
+
+/* .darkmode {
+  --primary-color: #002737;
+  --secondry-color: #00212e;
+  --white: #fff;
+}
+
+.lightmode {
+  --primary-color: #002737;
+  --secondry-color: #00212e;
+  --white: #fff;
+} */
+
+
+.light-mode .all-page :is(p > a,
+  li > a,
+  h2 > a,
+  h3 > a,
+  h4 > a,
+  h5 > a,
+  h6 > a,
+  .related-post > a):not(.site-social-links a, .toc-body a) {
+  color: #0dc85d;
+}
+
+.light-mode .contact-page {
+  background: unset;
+}
+
+.light-mode #myBtn {
+  background-color: #002737;
+}
+
+.light-mode .logo-second {
+  display: block !important;
+}
+
+.light-mode .logo-first {
+  display: none;
+}
+
+.light-mode .seperator::before,
+.light-mode .play::before,
+.light-mode .mail svg path,
+.light-mode .site-social-links svg path,
+.light-mode .dropdown::after,
+.light-mode .toggle-slide-btn svg,
+.light-mode .contact-mail svg,
+.light-mode .log-in {
+  filter: invert(1);
+}
+
+.light-mode .logos-link a img:hover {
+  filter: brightness(0.5);
+}
+
+.light-mode .toc-body ul li a {
+  color: #000;
+}
+
+.light-mode .toc-header span {
+  color: #fff;
+}
+
+.light-mode .accordions summary {
+  border: 1px solid #c7c5c52b;
+}
+
+.light-mode .digital-widgets .widgets-content,
+.light-mode blockquote,
+.light-mode .related-post,
+.light-mode .author-details,
+.light-mode .timeline,
+.light-mode .author-container,
+.light-mode .contact-page .contact-mail,
+.light-mode .contact-page .site-social-links,
+.light-mode .contact-page form,
+.light-mode footer {
+  background-color: #c7c5c52b;
+}
+
+.light-mode .dropdown ul .dropdown::after {
+  background: url('data:image/svg+xml,<svg fill="%23fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9S301 191.9 288 191.9L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg>') no-repeat center;
+}
+
+.light-mode main .digiplan-container-2 .bg-color-card {
+  border: 1px solid #c7c5c52b;
+}
+
+.light-mode {
+  background-color: white;
+  color: var(--black);
+}
+
+.invert-filter::before {
+  filter: invert(1);
+}
+
+
+/* # General
+=================================================*/
+body {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+body.darkmode {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+a {
+  color: var(--white);
+  transition: all 0.5s;
+  text-decoration: none;
+}
+
+p {
+  line-height: 30px;
+  opacity: 0.8;
+}
+
+
+form input {
+  border: 1px solid #ddd;
+}
+
+
+/* # Common Class
+=================================================*/
+[class*="digiplan-container-bg"],
+.all-page,
+.bg-color-card {
+  background-color: var(--secondry-color);
+}
+
+.bg-color-card {
+  border-radius: 8px;
+}
+
+.all-page :is(p > a,
+  li > a,
+  h2 > a,
+  h3 > a,
+  h4 > a,
+  h5 > a,
+  h6 > a,
+  .related-post > a):not(.site-social-links a) {
+  border-bottom: 2px solid rgba(19, 204, 98, 1);
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+
+/* # Common Components
+=================================================*/
+/* Breadcrumbs ___________Starrts */
+#breadcrumbs span span {
+  border: 1px solid #e7e7e7;
+}
+
+/*Separator_____________Start*/
+
+.seperator div {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.seperator::after {
+  background: linear-gradient(270deg,
+      rgba(19, 204, 98, 0.19) 19.76120173931122%,
+      rgba(1, 125, 171, 1) 98.85097742080688%);
+}
+
+/*Sep button_____________Start*/
+
+.sep-btn {
+  border: 1px solid #b4b4b4;
+}
+
+.sep-btn:hover {
+  background: linear-gradient(270deg,
+      rgba(19, 204, 98, 0.19) 19.76120173931122%,
+      rgba(1, 125, 171, 1) 98.85097742080688%);
+}
+
+/* Social Icons _____________Start*/
+.site-social-links ul li a {
+  border: 1px solid rgba(217, 217, 217, 0.3);
+}
+
+/* border-bottom _____________Start */
+.border-bottom>*:not(:first-child):before {
+  background-color: rgba(217, 217, 217, 0.3);
+}
+
+
+/* # Header
+=================================================*/
+header {
+  background-color: var(--primary-color);
+  border-bottom: 1px solid #c7c5c52b;
+}
+
+header ul li a:hover:after,
+a.active:after {
+  width: 100%;
+  background: var(--white);
+}
+
+header ul .dropdown ul {
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+}
+
+header .mob-search-btn {
+  background: linear-gradient(212deg,
+      rgba(19, 204, 98, 1) 5%,
+      rgba(1, 125, 171, 1) 94%);
+}
+
+header ul li ul a {
+  color: var(--black);
+}
+
+/* # Home page
+=================================================*/
+
+/* # Single Page
+=================================================*/
+/* Blog header _____________start */
+.timeline,
+.toc-body {
+  background-color: var(--primary-color);
+}
+
+.timeline {
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Blog sidebar_____________start */
+.sidebar .co-aut {
+  border: 1px solid rgba(54, 126, 161, 0.5);
+}
+
+.sidebar .co-img::after {
+  background: url('data:image/svg+xml,<svg class="star" width="28" height="27" viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23a)"><path d="M12.65.333c-.826.298-1.747.974-2.262 1.65l-.422.567H8.562c-1.686.015-2.295.283-3.387 1.462-.905.975-1.296 2.139-1.186 3.57.078.959.078.959-.5 1.368-1.046.77-1.873 2.406-1.873 3.742 0 1.337.827 2.972 1.873 3.743.578.409.578.409.5 1.368-.11 1.43.28 2.594 1.186 3.57 1.092 1.179 1.701 1.446 3.387 1.462h1.404l.422.566c.89 1.18 2.278 1.855 3.792 1.855 1.514 0 2.903-.676 3.793-1.855l.421-.566H19.8c1.686-.016 2.294-.283 3.387-1.463.905-.975 1.295-2.138 1.186-3.57-.078-.959-.078-.959.5-1.367 1.045-.77 1.872-2.406 1.872-3.743 0-1.336-.827-2.972-1.872-3.742-.578-.41-.578-.41-.5-1.368.11-1.4-.265-2.516-1.155-3.523C22.14 2.85 21.5 2.565 19.8 2.55h-1.405l-.421-.565C17.083.804 15.694.128 14.18.128c-.515 0-1.201.094-1.53.205Z" fill="url(%23b)"/><path d="m14.047 7.393-1.38 2.924-3.088.47c-.554.084-.776.797-.374 1.206l2.234 2.275-.528 3.213c-.095.58.49 1.015.98.744l2.763-1.517 2.762 1.517c.49.27 1.076-.164.981-.744l-.528-3.213 2.234-2.275c.401-.409.18-1.122-.374-1.206l-3.088-.47-1.38-2.924a.664.664 0 0 0-1.214 0Z" fill="%23fff"/></g><defs><linearGradient id="b" x1="24.795" y1="25.256" x2="1.187" y2=".538" gradientUnits="userSpaceOnUse"><stop stop-color="%2313CC62"/><stop offset="1" stop-color="%23017DAB"/></linearGradient><clipPath id="a"><path fill="%23fff" d="M.36.128h27.641v26.385H.36z"/></clipPath></defs></svg>') no-repeat center;
+}
+
+/* table of content */
+.toc-header {
+  background: linear-gradient(223.68deg,
+      rgba(19, 204, 98, 1) 0%,
+      rgba(1, 125, 171, 1) 100%);
+}
+
+.toc-body::-webkit-scrollbar {
+  width: 15px;
+}
+
+.toc-body::-webkit-scrollbar-track {
+  background: var(--primary-color);
+}
+
+.toc-body::-webkit-scrollbar-thumb {
+  background: linear-gradient(223.68deg,
+      rgba(19, 204, 98, 1) 0%,
+      rgba(1, 125, 171, 1) 100%);
+  border-radius: 20px;
+  border: 3px solid var(--primary-color);
+}
+
+.tableofcontent ul li.active a {
+  color: rgba(19, 204, 98, 1) !important;
+}
+
+.toc-body ul li a {
+  color: #fff;
+}
+
+.accordions summary::before,
+.tableofcontent ul li::before {
+  color: var(--white);
+}
+
+/* Blog details _____________start */
+
+.blog-content > p:first-of-type::first-letter {
+  background: linear-gradient(223.68deg,
+      rgba(19, 204, 98, 1) 0%,
+      rgba(1, 125, 171, 1) 100%);
+  color: var(--white);
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 35px;
+  font-weight: 800;
+  margin-right: 10px;
+  -webkit-initial-letter: 1.8;
+  initial-letter: 1.8;
+}
+
+/* widgets */
+.widget-heading {
+  background: linear-gradient(223.68deg,
+      rgba(19, 204, 98, 1) 0%,
+      rgba(1, 125, 171, 1) 100%);
+  color: #fff;
+}
+
+.note .widget-heading::before {
+  background: url('data:image/svg+xml,<svg class="file-text" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 2.666H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-12l-6-6Z" stroke="%23fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 2.666v6h6m-4 5H8m8 4H8m2-8H8" stroke="%23fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center;
+}
+
+.source .widget-heading::before {
+  background: url('data:image/svg+xml,<svg class="vector" width="12" height="21" viewBox="0 0 12 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.1 7.113H6.773l1.597-5.07c.15-.594-.28-1.18-.87-1.18H2.1a.914.914 0 0 0-.892.813l-1.2 9.375c-.071.562.349 1.062.892 1.062h4.452l-1.73 7.598c-.134.594.3 1.152.875 1.152a.894.894 0 0 0 .78-.468l6.6-11.875c.348-.622-.083-1.407-.777-1.407Z" fill="%23fff"/></svg>') no-repeat center;
+}
+
+.also-read .widget-heading::before {
+  background: url('data:image/svg+xml,<svg class="vector" width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.036 19.159c-.57-.03-1.012-.486-1.012-1.032V9.423c0-.595.517-1.069 1.139-1.033.944.053 2.353.178 3.816.465 1.463.288 2.978.74 4.133 1.447a.495.495 0 0 1 .239.427v9.609c0 .377-.413.619-.765.442-2.39-1.204-5.844-1.532-7.55-1.621ZM10 .888a3.726 3.726 0 1 1 0 7.45 3.726 3.726 0 0 1 0-7.45Zm.889 9.414c1.155-.707 2.67-1.159 4.132-1.447a28.701 28.701 0 0 1 3.816-.465c.622-.036 1.139.438 1.139 1.033v8.704c0 .547-.442 1.003-1.012 1.033-1.705.09-5.158.417-7.547 1.62-.353.177-.767-.065-.767-.443v-9.601c0-.175.086-.34.239-.434Z" fill="%23fff" stroke="url(%23a)" stroke-width=".049"/><defs><linearGradient id="a" x1="18.449" y1=".863" x2="-.341" y2="20.538" gradientUnits="userSpaceOnUse"><stop stop-color="%2313CC62"/><stop offset="1" stop-color="%23017DAB"/></linearGradient></defs></svg>') no-repeat center;
+}
+
+.widget-content {
+  background-color: var(--primary-color);
+}
+
+.widget-content::before {
+  background: linear-gradient(223.68deg,
+      rgba(19, 204, 98, 1) 0%,
+      rgba(1, 125, 171, 1) 100%);
+}
+
+/* Accordians faq */
+.accordions summary {
+  background-color: var(--primary-color);
+}
+
+.accordions summary {
+  border: 1px solid rgba(248, 248, 248, 0.1);
+}
+
+.accordions summary::after {
+  border: 1px solid rgba(248, 248, 248, 0.1);
+  background: url('data:image/svg+xml,<svg class="vector" width="5" height="9" viewBox="0 0 5 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m4.157.35-4 4 4 4" stroke="url(%23a)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="a" x1="4.157" y1="7.73" x2="-1.97" y2="4.804" gradientUnits="userSpaceOnUse"><stop stop-color="%2313CC62"/><stop offset="1" stop-color="%23017DAB"/></linearGradient></defs></svg>') no-repeat center;
+}
+
+.accordion-content {
+  border-left: 2px solid rgba(19, 204, 98, 1);
+}
+
+/* author details */
+.author-details {
+  background-color: var(--primary-color);
+  border-top: 1px solid rgba(19, 204, 98, 1);
+}
+
+.author-img img {
+  border: 3px solid #fff;
+}
+
+/* # All Author Page
+=================================================*/
+
+/* # Author Single Page
+=================================================*/
+
+/* # Page Templates
+=================================================*/
+
+/* # Category and Search Results Page
+=================================================*/
+
+/* # Search Not Found Page
+=================================================*/
+
+/* # 404 Page
+=================================================*/
+.error-page .sep-btn {
+  background: linear-gradient(212deg,
+      rgba(19, 204, 98, 1) 5%,
+      rgba(1, 125, 171, 1) 94%);
+  width: fit-content;
+  margin: auto;
+}
+
+.error-title {
+  font-size: 80px;
+  font-weight: 700;
+  margin-top: -45px;
+}
+
+.error-page .sep-btn,
+.contact-page .sep-btn {
+  color: #fff;
+}
+
+/* # Footer
+=================================================*/
+footer {
+  background-color: var(--secondry-color);
+  color: var(--white);
+}
+
+footer .h6 {
+  border-bottom: 2px solid rgba(217, 217, 217, 0.3);
+}
+
+footer .site-social-links ul li a:hover {
+  background: rgba(255, 255, 255, 0.38);
+}
+
+.copyright {
+  border-top: 1px solid rgba(217, 217, 217, 0.3);
+}
+
+/* # Scroll top button
+=================================================*/
+#myBtn {
+  font-size: 18px;
+  background-color: var(--secondry-color);
+}
+
+/* # Responsive Code
+=================================================*/
+@media screen and (max-width: 1023px) {
+  header nav ul {
+    background-color: #fff;
+  }
+
+  header ul li a {
+    color: var(--black);
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .seperator div {
+    font-size: 25px;
+  }
+
+  .big-head {
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  .subhead {
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  .error-page .error-title {
+    font-size: 40px;
+    margin-top: -15px;
+  }
+
+  .error-title {
+    font-size: 40px;
+  }
+
+  .thankyou-container {
+    background: unset;
+  }
+
+
+
+
+}
