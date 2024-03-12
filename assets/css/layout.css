@@ -133,7 +133,13 @@ button {
   counter-reset: term definition;
 }
 
-.all-page p {
+.all-page .number>*:not(a)::before {
+  counter-increment: term;
+  content: counter(term) ". ";
+}
+
+.all-page p,
+.all-page .wp-block-image {
   margin-bottom: 20px;
 }
 
@@ -225,8 +231,8 @@ button {
   grid-template-columns: auto 30%;
 }
 
-.grid-reverse-10 {
-  grid-template-columns: 10% auto;
+.grid-reverse-15 {
+  grid-template-columns: 15% auto;
 }
 
 .grid-reverse-20 {
@@ -675,7 +681,7 @@ header .dropdown:hover>ul {
   content: "";
 }
 
-.number {
+.home-page .number {
   counter-reset: term definition;
   position: sticky;
   top: 85px;
@@ -683,12 +689,12 @@ header .dropdown:hover>ul {
   padding: 30px 30px 30px 20px;
 }
 
-.number .site-content {
+.home-page .number .site-content {
   position: relative;
   padding-left: 50px;
 }
 
-.number .site-content:before {
+.home-page .number .site-content:before {
   content: counter(term) "";
   counter-increment: term;
   position: absolute;
@@ -846,18 +852,9 @@ header .dropdown:hover>ul {
   opacity: 0;
   visibility: hidden;
   height: 0;
-  padding: 15px;
+  padding: 0px;
   transition: all 0.3s ease-in-out;
 }
-
-/* .accordions summary::before,
-.tableofcontent ul li::before {
-  counter-increment: term;
-  content: counter(term) ".";
-  font-size: 16px;
-  position: absolute;
-  left: 15px;
-} */
 
 .tableofcontent ul li::before {
   left: -25px;
@@ -1009,26 +1006,6 @@ blockquote::before {
 
 }
 
-/* author details */
-.author-details {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 8px;
-  padding: 20px;
-  margin-top: 60px !important;
-}
-
-.author-img img {
-  border-radius: 50%;
-}
-
-.author-details .author-img img {
-  margin-top: -70px;
-}
-
 
 /* # All Author Page
 =================================================*/
@@ -1155,14 +1132,18 @@ blockquote::before {
 
 /* # Author Single Page 
 =================================================*/
-.author-page .page-content {
-  margin-bottom: 50px;
-}
-
 .author-container {
   background-color: var(--primary-color);
-  padding: 35px;
-  margin-bottom: 30px;
+  padding: 25px;
+  border-radius: 8px;
+}
+
+.author-img img {
+  border-radius: 50%;
+}
+
+.author-page .page-content {
+  margin-bottom: 50px;
 }
 
 .author-container .author-img img {
@@ -1664,16 +1645,6 @@ footer .footer-category ul {
     filter: unset !important;
   }
 
-  /* header nav ul {
-    transform: translateX(-100%);
-    display: block;
-  } */
-
-
-  /* #breadcrumbs {
-    margin-bottom: 20px;
-  } */
-
   [class*="digiplan-container"] {
     margin-bottom: 30px;
   }
@@ -1691,10 +1662,21 @@ footer .footer-category ul {
     margin-left: auto;
   }
 
-
-
   .blog-header>.co-aut {
     display: block;
+  }
+
+  .digi-single-page .sidebar {
+    order: 1;
+    position: static;
+  }
+
+  .digi-single-page .blog-content {
+    order: 2;
+  }
+
+  .digi-single-page .related-post {
+    order: 3;
   }
 
   .sidebar .co-aut {
@@ -1711,24 +1693,14 @@ footer .footer-category ul {
   .timeline,
   .timeline>* {
     border-left: unset !important;
-    padding: 10px;
+    padding: 5px;
     display: block;
   }
-
-  /* .blockquote,
-  .digiplan-widget-pc-container,
-  .digiplan-widget,
-  .accordions,
-  .table-responsive {
-    margin-bottom: 20px;
-  } */
 
   .robox-img img {
     position: unset;
     height: 175px;
   }
-
-
 
 }
 
@@ -1744,23 +1716,20 @@ footer .footer-category ul {
     margin-bottom: 25px;
   }
 
+  .row-gap {
+    row-gap: 20px !important;
+  }
+
+  .widget-content {
+    padding: 20px !important;
+  }
+
   .left-part {
     gap: 15px;
   }
 
   [class*="grid"] {
     grid-template-columns: auto !important;
-  }
-
-  /* .grid-30 {
-    grid-template-columns: unset;
-  } */
-
-
-
-  .all-author-page {
-    height: auto;
-    padding: 50px 0px;
   }
 
   .team li {
@@ -1771,22 +1740,6 @@ footer .footer-category ul {
     overflow-x: auto;
   }
 
-  .digital-widget-pc-container .col-lg-6:first-child .digital-pc-container {
-    margin-bottom: 30px;
-  }
-
-  .also-read .img-placeholder {
-    margin-bottom: 15px;
-  }
-
-  /* .timeline {
-    margin-bottom: 30px;
-  } */
-  /* 
-  .related-post {
-    display: block;
-  } */
-
   .messages,
   .contact-page .sep-btn {
     margin-top: 10px;
@@ -1796,35 +1749,16 @@ footer .footer-category ul {
     padding: 15px;
   }
 
-  .thankyou-container img {
-    margin-bottom: 60px;
-  }
-
-  .author-container .d-flex {
-    display: block;
-  }
-
   .author-container {
     padding: 20px;
+    justify-content: center;
+    text-align: center;
   }
-
-  .author-container img {
-    margin-right: 0px;
-  }
-
 
   .author-page .h6:first-child {
     margin: 10px 0px;
     display: block;
     text-align: center;
-  }
-
-  .category-page .col-lg-6 .site-content {
-    margin-bottom: 20px;
-  }
-
-  .category-page .site-card {
-    margin-bottom: 20px;
   }
 
   .error-title {
@@ -1834,8 +1768,6 @@ footer .footer-category ul {
   .number {
     padding-top: 15px;
   }
-
-
 
   .number .big-category {
     margin: 0 auto;
@@ -1850,25 +1782,9 @@ footer .footer-category ul {
     font-weight: 700;
   }
 
-  /* .bg-color-card .seperator {
-    margin-top: 25px;
-  } */
-  /* 
-  .digiplan-container-2 .bg-color-card .img-placeholder,
-  .digiplan-container-2 .row .col-lg-6:last-child .site-card {
-    margin-bottom: 15px;
-  } */
-
   .digiplan-container-5 .col-lg-5 {
     order: 2;
   }
-
-  /* .digiplan-container-3 .col-lg-7 .d-grid,
-  .digiplan-container-4 .col-lg-7 .d-grid {
-    display: flex;
-    flex-direction: column;
-    border: unset;
-  } */
 
   .digiplan-container-3 .col-lg-7 .site-card .img-placeholder,
   .digiplan-container-4 .col-lg-7 .site-card .img-placeholder {
@@ -1878,15 +1794,6 @@ footer .footer-category ul {
   .digiplan-container-3 .col-lg-7 .site-card .site-content,
   .digiplan-container-4 .col-lg-7 .site-card .site-content {
     order: 2;
-  }
-
-  /* .digiplan-container-2 .col-lg-5 .site-card {
-    margin-bottom: 30px;
-  } */
-
-  .related .line::after {
-    width: 70%;
-    bottom: 14px;
   }
 
   header .search-bar-show {
@@ -1901,10 +1808,5 @@ footer .footer-category ul {
     right: 0px !important;
     top: 50% !important;
   }
-
-  .mt-25 {
-    margin-top: 15px;
-  }
-
 
 }
