@@ -4,14 +4,10 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Digitalplanner</title>
-
-   <!-- <link rel="stylesheet" href="./assets/css/layout.css">
-   <link rel="stylesheet" href="./assets/css/style.css"> -->
-
-   <link rel="stylesheet" href="./assets/css/layout-1.css">
-   <link rel="stylesheet" href="./assets/css/style-1.css">
-
+   <title>404 Page</title>
+   
+   <link rel="stylesheet" href="./assets/css/layout.css">
+   <link rel="stylesheet" href="./assets/css/style.css">
 
    <style>
       @font-face {
@@ -30,7 +26,6 @@
          src: url("assets/fonts/nunito-sans/nunito-sans-v15-latin-700.woff2") format("woff2");
       }
    </style>
-
 
 </head>
 
@@ -141,21 +136,35 @@
    </header>
    <!-- header start end -->
 
-   <main>
-      <div class="error-page all-page">
-         <div class="container">
-            <div class="row">
-               <div class="robox-img">
-                  <img src="assets/img/scientist-logo.svg" alt="">
-               </div>
-               <span class="h2">404</span>
-               <div class="error-title">Opps...!</div>
-               <p>Sorry ! Couldn't find the page you requested.</p>
-               <a href="#" class="sep-btn">See all How to</a>
+   <main class="all-page bg-sparkling page-404">
+      <div class="container">
+
+         <p id="breadcrumbs">
+            <span>
+               <span>
+                  <a href="#">Product</a>
+               </span>
+               <span>
+                  <a href="#">Accessories</a>
+               </span>
+            </span>
+         </p>
+
+         <div class="error-page grid">
+            <div class="robox-img">
+               <img src="assets/img/scientist-logo.svg" alt="" />
             </div>
+
+            <span class="h2">404</span>
+            <div class="error-title">Opps...!</div>
+            <p>Sorry ! Couldn't find the page you requested.</p>
+            <a href="#" class="sep-btn">See all How to</a>
+
          </div>
+
       </div>
    </main>
+
 
 
    <label class="ui-switch ">
