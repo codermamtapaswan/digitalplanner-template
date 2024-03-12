@@ -102,22 +102,23 @@ textarea {
 }
 
 
-button{
+button {
   cursor: pointer;
 }
 
 
 /* # Common Class
 =================================================*/
-.all-page{
+.all-page {
   padding: 40px 0;
 }
+
 .all-page ul {
   list-style-type: none;
 }
 
 .all-page :is(ul, ol):not(.site-social-links ul) {
-  padding-left: 2rem;
+  padding-left: 1.5rem;
   margin-bottom: 20px;
 }
 
@@ -184,6 +185,9 @@ button{
   margin-bottom: 20px;
 }
 
+.pt-0 {
+  padding-top: 0 !important;
+}
 
 .p-30 {
   padding: 30px;
@@ -246,22 +250,22 @@ blockquote,
   margin-bottom: 30px;
 }
 
-.page-header{
+.page-header {
   margin-bottom: 50px;
   gap: 15px !important;
 }
 
-.page-header p{
+.page-header p {
   margin-bottom: 0 !important;
 }
 
-.bg-sparkling{
-  height:580px;
+.bg-sparkling {
+  height: 580px;
   width: 100%;
 }
 
-.category-page{
-  gap:40px;
+.category-page {
+  gap: 40px;
 }
 
 
@@ -305,6 +309,7 @@ blockquote,
   overflow: hidden;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  margin-bottom: 0 !important;
 }
 
 .site-title {
@@ -335,7 +340,8 @@ blockquote,
 }
 
 .author,
-.category {
+.category-title,
+.date {
   display: block;
   opacity: 0.7;
 }
@@ -357,20 +363,22 @@ blockquote,
 
 .seperator::after {
   content: "";
-  width: 64%;
+  /* width: 64%; */
   height: 1px;
   flex: 1;
   bottom: 8px;
-  margin: 30px 50px 0px 15px;
+  /* margin: 30px 50px 0px 15px; */
 }
-.seperator .sep-btn{
+
+.seperator .sep-btn {
   order: 2;
 }
+
 /*Sep button_____________Start*/
 .sep-btn {
   padding: 5px 12px;
   border-radius: 4px;
-  display:inline-block;
+  display: inline-block;
 }
 
 /* Social Icons _____________Start*/
@@ -418,11 +426,12 @@ blockquote,
 
 /* pagination_____________start */
 
-.pagination{
+.pagination {
   margin-top: 50px;
 }
 
-.pagination, .nav-links {
+.pagination,
+.nav-links {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -439,6 +448,7 @@ blockquote,
   transition: all 0.3s ease 0s;
   z-index: 1;
 }
+
 .page-numbers::before {
   content: "";
   height: 100%;
@@ -516,14 +526,6 @@ header nav ul li a {
   display: inline-block;
 }
 
-header ul li a::after {
-  content: "";
-  margin: auto;
-  display: block;
-  height: 2px;
-  width: 0px;
-  transition: all 0.3s;
-}
 
 header ul .dropdown ul {
   display: block;
@@ -544,20 +546,12 @@ header ul .dropdown ul {
 }
 
 .dropdown::after,
-.dropdown .dropdown::after {
-  content: "";
-  cursor: pointer;
-  display: flex;
-  width: 12px;
-  height: 12px;
-  transition: transform 0.3s ease;
-}
-
+.dropdown .dropdown::after,
 .dropdown ul .dropdown::after {
   display: flex;
   content: "";
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
   transition: transform 0.3s ease;
   cursor: pointer;
 }
@@ -650,19 +644,20 @@ header .dropdown:hover>ul {
   border-radius: 0px 8px 8px 0px;
 }
 
-.related .line {
+/* .related .line {
   font-size: 20px;
   display: flex;
   align-items: center;
   gap: 10px;
-}
+} */
 
-.related .line::after {
+/* .related .line::after {
   content: "";
   width: 80%;
   height: 1px;
-}
-.play {
+} */
+
+/* .play {
   position: relative;
   padding-left: 25px;
 }
@@ -674,7 +669,7 @@ header .dropdown:hover>ul {
   height: 10px;
   left: 0px;
   top: 7px;
-}
+}*/
 
 .play:not(:last-child)::after {
   content: "";
@@ -710,6 +705,10 @@ header .dropdown:hover>ul {
 .number .site-content:not(:last-child)::after {
   content: "";
   padding-top: 20px;
+}
+
+.number .h5 {
+  margin-bottom: 0 !important;
 }
 
 .number .big-category {
@@ -830,6 +829,10 @@ header .dropdown:hover>ul {
   overflow-y: auto;
 }
 
+.tableofcontent .toc-body>ul {
+  padding-left: 0 !important;
+}
+
 .toc-body li ul {
   margin-top: 15px;
   list-style-type: disc;
@@ -847,14 +850,14 @@ header .dropdown:hover>ul {
   transition: all 0.3s ease-in-out;
 }
 
-.accordions summary::before,
+/* .accordions summary::before,
 .tableofcontent ul li::before {
   counter-increment: term;
   content: counter(term) ".";
   font-size: 16px;
   position: absolute;
   left: 15px;
-}
+} */
 
 .tableofcontent ul li::before {
   left: -25px;
@@ -865,7 +868,7 @@ header .dropdown:hover>ul {
 }
 
 .toc-body::-webkit-scrollbar {
-  width: 15px;
+  width: 10px;
 }
 
 /* Blog Contents _____________start */
@@ -876,6 +879,7 @@ header .dropdown:hover>ul {
 table {
   width: 100%;
 }
+
 table tr:first-child th {
   border-radius: 4px 4px 0px 0px;
   height: 45px;
@@ -970,16 +974,16 @@ blockquote::before {
 
 .accordions summary {
   display: flex;
-  align-items: center;
   cursor: pointer;
   font-weight: 600;
-  padding: 10px 10px 10px 40px;
+  padding: 15px;
   border-radius: 8px;
   transition: all 0.2s ease;
   position: relative;
   gap: 10px;
 }
-.accordions summary a{
+
+.accordions summary a {
   display: contents;
 }
 
@@ -1151,9 +1155,10 @@ blockquote::before {
 
 /* # Author Single Page 
 =================================================*/
-.author-page .page-content{
+.author-page .page-content {
   margin-bottom: 50px;
 }
+
 .author-container {
   background-color: var(--primary-color);
   padding: 35px;
@@ -1174,7 +1179,7 @@ blockquote::before {
   background: url(../img/bg-world.svg) no-repeat center;
 }
 
-.contact-page .grid-50-50{
+.contact-page .grid-50-50 {
   align-items: unset;
 }
 
@@ -1207,9 +1212,7 @@ textarea {
 }
 
 .contact-page .sep-btn {
-  background: linear-gradient(212deg,
-    rgba(19, 204, 98, 1) 5%,
-    rgba(1, 125, 171, 1) 94%);
+  background: var(--gradient);
   padding: 13px;
   border: unset;
   width: 100%;
@@ -1229,16 +1232,17 @@ textarea::placeholder {
 =================================================*/
 .error-page {
   text-align: center;
-  gap:10px;
+  gap: 10px;
 }
 
-.error-page :is(h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6){
+.error-page :is(h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6) {
   margin-bottom: 0 !important;
 }
 
-.page-404.bg-sparkling{
-  height:500px !important;
+.page-404.bg-sparkling {
+  height: 500px !important;
 }
+
 .page-404 .error-title {
   margin-top: -45px;
 }
@@ -1626,12 +1630,10 @@ footer .footer-category ul {
     display: none;
   }
 
+
   .dropdown::after,
-  .dropdown ul .dropdown::after {
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9S301 191.9 288 191.9L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg>') no-repeat center;
-    /* top: 20px;
-    right: 0px;
-    position: absolute; */
+  .dropdown .dropdown::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m4 5.588 4 4 4-4' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
     float: right;
   }
 
@@ -1737,8 +1739,9 @@ footer .footer-category ul {
     top: 30px;
   }
 
-  .blog-header,.page-header {
-   margin-bottom: 25px;
+  .blog-header,
+  .page-header {
+    margin-bottom: 25px;
   }
 
   .left-part {
@@ -1790,7 +1793,7 @@ footer .footer-category ul {
   }
 
   .contact-page form {
-    padding:15px;
+    padding: 15px;
   }
 
   .thankyou-container img {
@@ -1831,6 +1834,8 @@ footer .footer-category ul {
   .number {
     padding-top: 15px;
   }
+
+
 
   .number .big-category {
     margin: 0 auto;

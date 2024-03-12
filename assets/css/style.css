@@ -10,10 +10,14 @@
   --secondry-color: #00212e;
   --white: #fff;
   --black: #000;
-  --btn-gradient: linear-gradient(212deg,
+
+  --gradient: linear-gradient(212deg,
       rgba(19, 204, 98, 1) 5%,
       rgba(1, 125, 171, 1) 94%);
 
+  --gradient-hover: linear-gradient(270deg,
+      rgba(19, 204, 98, 0.19) 19.76120173931122%,
+      rgba(1, 125, 171, 1) 98.85097742080688%);
 
   scroll-behavior: smooth;
 }
@@ -137,7 +141,6 @@ a {
 
 p {
   line-height: 30px;
-  opacity: 0.8;
 }
 
 
@@ -155,8 +158,7 @@ form input {
 }
 
 .all-page ul li:not(.tableofcontent ul li, .site-social-links ul li)::before {
-  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m4 12 4-4-4-4m5 8 4-4-4-4' stroke='%2313cc62' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-size: cover;
+  background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m6.415 12.858 4-4-4-4' stroke='%230284A4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
 }
 
 .bg-color-card {
@@ -175,10 +177,12 @@ form input {
   font-weight: 600;
   transition: all 0.3s;
 }
-.bg-sparkling{
+
+.bg-sparkling {
   background: url(../img/error-page-bg.svg) no-repeat center;
   background-size: contain;
 }
+
 .img-placeholder {
   background-color: #c7c7c7;
 }
@@ -197,14 +201,13 @@ form input {
   font-size: 40px;
   font-weight: 700;
 }
+
 .seperator::before {
   background: url('data:image/svg+xml,<svg width="23" height="29" viewBox="0 0 23 29" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.047 0v3.868h-3.869V0h3.869Zm-7.24 5.725v6.19H.618v-6.19h6.19ZM10.6 19.061v9.79H0v-10.6h9.94l4.565-4.734V6.483h7.813v7.813h-7.123L10.6 19.061Z" fill="%23fff"/></svg>') no-repeat;
 }
 
 .seperator::after {
-  background: linear-gradient(270deg,
-      rgba(19, 204, 98, 0.19) 19.76120173931122%,
-      rgba(1, 125, 171, 1) 98.85097742080688%);
+  background: var(--gradient-hover);
 }
 
 /*Sep button_____________Start*/
@@ -214,15 +217,14 @@ form input {
 }
 
 .sep-btn:hover {
-  background: linear-gradient(270deg,
-      rgba(19, 204, 98, 0.19) 19.76120173931122%,
-      rgba(1, 125, 171, 1) 98.85097742080688%);
+  background: var(--gradient-hover);
 }
 
 /* Social Icons _____________Start*/
 .site-social-links ul li a {
   border: 1px solid rgba(217, 217, 217, 0.3);
 }
+
 .site-social-links ul li a:hover {
   background: rgba(255, 255, 255, 0.38);
 }
@@ -269,11 +271,11 @@ header {
   border-bottom: 1px solid #c7c5c52b;
 }
 
-header ul li a:hover:after,
+/* header ul li a:hover:after,
 a.active:after {
   width: 100%;
   background: var(--white);
-}
+} */
 
 header ul .dropdown ul {
   background: #fff;
@@ -281,54 +283,57 @@ header ul .dropdown ul {
 }
 
 header .mob-search-btn {
-  background: linear-gradient(212deg,
-      rgba(19, 204, 98, 1) 5%,
-      rgba(1, 125, 171, 1) 94%);
+  background-image: var(--gradient);
 }
 
 header ul li ul a {
   color: var(--black);
 }
+
 .dropdown::after,
 .dropdown .dropdown::after {
-  background: url('data:image/svg+xml,<svg fill="%23fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9S301 191.9 288 191.9L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg>') no-repeat center;
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m4 5.588 4 4 4-4' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
 .dropdown ul .dropdown::after {
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9S301 191.9 288 191.9L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg>') no-repeat center;
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m4 5.588 4 4 4-4' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
+
 header form input {
   background: #fff;
   box-shadow: 2px 1px 12px 2px rgba(0, 0, 0, 0.1);
   border: 1px solid var(--white);
 }
+
 header form button {
   background: unset;
   border: unset;
 }
+
 /* # Home page
 =================================================*/
 .card-border {
-  border: 1px solid rgba(217, 217, 217, 0.3);
+  background-image: var(--gradient);
+  background-origin: border-box;
+  box-shadow: inset 0 100vw var(--primary-color);
+  border: 2px solid transparent;
 }
 
 .card-border::after {
-  background: linear-gradient(212deg,
-      rgba(19, 204, 98, 1) 5%,
-      rgba(1, 125, 171, 1) 94%);
+  background-image: var(--gradient);
 }
 
 .related .line {
   font-size: 20px;
 }
 
-.related .line::after {
+/* .related .line::after {
   background: rgba(217, 217, 217, 0.3);
-}
+} */
 
-.play::before {
+/* .play::before {
   background: url('data:image/svg+xml,<svg fill="%23fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80v352c0 17.4 9.4 33.4 24.5 41.9S58.2 482 73 473l288-176c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>') no-repeat;
-}
+} */
 
 .play:not(:last-child)::after {
   border-bottom: 1px solid rgba(217, 217, 217, 0.3);
@@ -345,6 +350,7 @@ header form button {
 .number .site-content:not(:last-child)::after {
   border-bottom: 1px solid rgba(217, 217, 217, 0.3);
 }
+
 .big-category {
   font-size: 60px;
   font-weight: 700;
@@ -381,9 +387,7 @@ header form button {
 
 /* table of content */
 .toc-header {
-  background: linear-gradient(223.68deg,
-      rgba(19, 204, 98, 1) 0%,
-      rgba(1, 125, 171, 1) 100%);
+  background: var(--gradient);
 }
 
 .tableofcontent .toc-body {
@@ -395,9 +399,7 @@ header form button {
 }
 
 .toc-body::-webkit-scrollbar-thumb {
-  background: linear-gradient(223.68deg,
-      rgba(19, 204, 98, 1) 0%,
-      rgba(1, 125, 171, 1) 100%);
+  background: var(--gradient);
   border-radius: 20px;
   border: 3px solid var(--primary-color);
 }
@@ -415,24 +417,7 @@ header form button {
   color: var(--white);
 }
 
-/* Blog details _____________start */
-
-/* .blog-content > p:first-of-type::first-letter {
-  background: linear-gradient(223.68deg,
-      rgba(19, 204, 98, 1) 0%,
-      rgba(1, 125, 171, 1) 100%);
-  color: var(--white);
-  padding: 8px;
-  border-radius: 4px;
-  font-size: 35px;
-  font-weight: 800;
-  margin-right: 10px;
-  -webkit-initial-letter: 1.8;
-  initial-letter: 1.8;
-} */
 /* Blog Contents _____________start */
-
-
 
 /* table */
 table {
@@ -486,9 +471,7 @@ blockquote::before {
 
 /* widgets */
 .widget-heading {
-  background: linear-gradient(223.68deg,
-      rgba(19, 204, 98, 1) 0%,
-      rgba(1, 125, 171, 1) 100%);
+  background: var(--gradient);
   color: #fff;
 }
 
@@ -509,9 +492,7 @@ blockquote::before {
 }
 
 .widget-content::before {
-  background: linear-gradient(223.68deg,
-      rgba(19, 204, 98, 1) 0%,
-      rgba(1, 125, 171, 1) 100%);
+  background: var(--gradient)
 }
 
 /* Accordians faq */
@@ -555,14 +536,12 @@ blockquote::before {
   font-weight: 700;
 }
 
-:is(.error-page,.contact-page).sep-btn{
+:is(.error-page, .contact-page).sep-btn {
   color: #fff;
 }
 
 .error-page .sep-btn {
-  background: linear-gradient(212deg,
-      rgba(19, 204, 98, 1) 5%,
-      rgba(1, 125, 171, 1) 94%);
+  background-image: var(--gradient);
   width: fit-content;
   margin: auto;
 }
