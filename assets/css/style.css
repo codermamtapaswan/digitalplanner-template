@@ -518,8 +518,24 @@ blockquote::before {
 }
 
 
-/* # Author Single Page 
+/* #All Author  and Author Single Page 
 =================================================*/
+.digiplan-authors-page {
+  background: url('/assets/img/star.svg') no-repeat center / cover;
+}
+
+.all-author-page .author-container {
+  border: 1px solid rgba(248, 248, 248, 0.1);
+}
+
+.all-author-page .author-container .author-img img {
+  border: 5px solid #626161;
+}
+
+.all-author-page .author-container:hover {
+  background: var(--primary-color) !important;
+}
+
 .author-container {
   background-color: var(--primary-color);
 }

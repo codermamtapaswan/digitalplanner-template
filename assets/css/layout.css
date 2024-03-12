@@ -983,126 +983,27 @@ blockquote::before {
 
 /* # All Author Page
 =================================================*/
-.team {
-  padding: 0px;
-  list-style: none;
-  flex-wrap: wrap;
-}
-
-.team-details .site-title {
-  color: #000;
-}
-
-.team li {
-  position: relative;
-  padding: 15px 5px;
-  display: none;
-  flex: 0 0 100%;
-  display: inline-block;
-  flex: 0 0 20%;
-}
-
-.team li .userProfile {
-  justify-content: center;
-  position: absolute;
-  top: calc(100% + var(--arrowSize));
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-}
-
-.userProfile {
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.team,
-.userProfile {
-  display: flex;
-}
-
-.aut-thumbnail {
-  height: 100px;
-  width: 100px;
-  flex: 0 0 auto;
-}
-
-.team li .aut-thumbnail {
-  position: relative;
-}
-
-.userProfile__image {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.team-details {
-  margin: 0 auto;
-  position: relative;
-  transform: translateX(0%) scale(1, 1);
-  background: white;
-  border: 1px solid #ccc;
-  padding: 20px;
-  width: 300px;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  border-radius: 4px;
-  transform-origin: center bottom;
-  transition: transform 0.3s cubic-bezier(0.45, 0.05, 0.55, 0.95);
-  color: #000;
-}
-
-.team__meta {
-  padding-bottom: 15px;
-}
 
 .all-author-page {
   display: flex;
   justify-content: center;
-  background-image: url(../img/star.svg);
   align-items: center;
-  padding: 75px 0px;
-  background: var(--secondry-color);
+  flex-wrap: wrap;
 }
 
-.team-details:after {
-  position: absolute;
-  top: calc(0% - var(--arrowSize) / 2);
-  background-color: #fff;
-  content: " ";
-  transform: rotate(45deg);
-  left: calc(50% - var(--arrowSize) / 2);
-  color: #000;
-  top: -6px;
-  width: 15px;
-  height: 15px;
+.all-author-page .author-container {
+  background-color: transparent;
+  border-radius: unset;
 }
 
-.team li:hover .aut-thumbnail:after,
-.team li.team-show .aut-thumbnail:after {
-  transform: translate(-50%, -50%) scale(1.2);
-  animation: rainbow-border 1.5s linear infinite;
+.auth-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
 }
 
-.team li:hover .team-details,
-.team li.team-show .team-details {
-  transform: translateX(-50%) scale(1, 1);
-}
-
-.team-details {
-  position: absolute;
-  bottom: calc(100% + 15px);
-  left: 50%;
-  bottom: -100%;
-  transform: translateX(-50%) scale(0, 0);
-  z-index: 1;
-}
-
-.team li .userProfile {
-  position: static;
-}
 
 /* # Author Single Page 
 =================================================*/
