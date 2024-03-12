@@ -1008,7 +1008,6 @@ blockquote::before {
 /* # Author Single Page 
 =================================================*/
 .author-container {
-  background-color: var(--primary-color);
   padding: 25px;
   border-radius: 8px;
 }
@@ -1031,16 +1030,11 @@ blockquote::before {
 
 /* # Contact Page Templates
 =================================================*/
-.contact-page {
-  background: url(../img/bg-world.svg) no-repeat center;
-}
-
 .contact-page .grid-50-50 {
   align-items: unset;
 }
 
 .contact-page form {
-  background-color: rgba(255, 255, 255, 0.1);
   padding: 30px;
 }
 
@@ -1052,19 +1046,16 @@ blockquote::before {
 
 .contact-mail,
 .contact-page .site-social-links {
-  background-color: var(--primary-color);
   padding: 20px;
   flex: 1;
 }
 
 .contact-page input,
 textarea {
-  background-color: var(--primary-color);
   padding: 15px;
   border: unset;
   margin: 15px 0px;
   width: 100%;
-  color: var(--white);
 }
 
 .contact-page .sep-btn {

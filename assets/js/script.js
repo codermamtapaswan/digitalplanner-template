@@ -57,80 +57,69 @@ document.addEventListener("DOMContentLoaded", function () {
         searchForm.classList.toggle("search-bar-show");
     });
 
-    function toggleButtons() {
-        const toggleBtn = document.querySelector(".toggle-slide-btn");
-        const cancelBtn = document.querySelector(".cancel-btn");
-        const headerUl = document.querySelector("header ul");
+    const toggleslideBtn = document.querySelector(".toggle-slide-btn");
+    const cancelBtn = document.querySelector(".cancel-btn");
+    const headerUl = document.querySelector("header ul");
 
+    function toggleButtons(toggleslideBtn, cancelBtn, headerUl) {
         headerUl.classList.toggle("show-ul");
-        toggleBtn.style.display = toggleBtn.style.display === "none" ? "block" : "none";
+        toggleslideBtn.style.display = toggleslideBtn.style.display === "none" ? "block" : "none";
         cancelBtn.style.display = cancelBtn.style.display === "block" ? "none" : "block";
     }
 
-    const toggleBtnheader = document.querySelector(".toggle-slide-btn");
-    toggleBtnheader.addEventListener("click", toggleButtons);
+    toggleslideBtn.addEventListener("click", function () {
+        toggleButtons(toggleslideBtn, cancelBtn, headerUl);
+    });
 
-    const cancelBtn = document.querySelector(".cancel-btn");
-    cancelBtn.addEventListener("click", toggleButtons);
+    cancelBtn.addEventListener("click", function () {
+        toggleButtons(toggleslideBtn, cancelBtn, headerUl);
+    });
 
 
 
     // mobile Dropdown  ============ start =====>
     const dropdowns = document.querySelectorAll(".dropdown");
     function toggleDropdown(e) {
-       e.preventDefault();
-       e.stopPropagation();
- 
-       const li = e.target.parentNode;
- 
-       dropdowns.forEach((dropdown) => {
-          if (dropdown !== li && !dropdown.contains(li)) {
-             dropdown.classList.remove("showMenu");
-          }
-       });
- 
-       li.classList.toggle("showMenu");
+        e.preventDefault();
+        e.stopPropagation();
+
+        const li = e.target.parentNode;
+
+        dropdowns.forEach((dropdown) => {
+            if (dropdown !== li && !dropdown.contains(li)) {
+                dropdown.classList.remove("showMenu");
+            }
+        });
+
+        li.classList.toggle("showMenu");
     }
- 
+
     dropdowns.forEach((dropdown) => {
-       dropdown.addEventListener("click", toggleDropdown);
+        dropdown.addEventListener("click", toggleDropdown);
     });
- 
+
     // // Add a click event listener to the document to close dropdowns when clicking outside
     document.addEventListener("click", (e) => {
-       const isMenuActive = menuNav.classList.contains("show_menu");
-       const targetElement = toggleBtn.querySelector(e.target.tagName);
- 
- 
-       if (
-          ![...dropdowns].some((dropdown) => dropdown.contains(e.target)) &&
-          !targetElement
-       ) {
-          dropdowns.forEach((dropdown) => {
-             dropdown.classList.remove("showMenu");
-          });
- 
- 
-          menuNav.classList.remove("show_menu");
-          if (isMenuActive) {
-             toggleBtn.innerHTML = isMenuActive ? svg.bar1 : svg.cross;
-          }
- 
-       }
+        const isMenuActive = menuNav.classList.contains("show_menu");
+        const targetElement = toggleBtn.querySelector(e.target.tagName);
+
+
+        if (
+            ![...dropdowns].some((dropdown) => dropdown.contains(e.target)) &&
+            !targetElement
+        ) {
+            dropdowns.forEach((dropdown) => {
+                dropdown.classList.remove("showMenu");
+            });
+
+
+            menuNav.classList.remove("show_menu");
+            if (isMenuActive) {
+                toggleBtn.innerHTML = isMenuActive ? svg.bar1 : svg.cross;
+            }
+
+        }
     });
-    // var dropdowns = document.querySelectorAll("header ul li");
-    // function toggleDropdown(e) {
-    //     var dropdownParent = e.currentTarget;
-    //     dropdowns.forEach(function (dropdown) {
-    //         if (dropdown !== dropdownParent) {
-    //             dropdown.classList.remove("showMenu");
-    //         }
-    //     });
-    //     dropdownParent.classList.toggle("showMenu");
-    // }
-    // dropdowns.forEach(function (dropdown) {
-    //     dropdown.addEventListener("click", toggleDropdown);
-    // });
 
 
 
@@ -236,16 +225,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     details.open = false;
                 }
             });
-            summaryElements.forEach((s, i) => {
-                if (i !== index) {
-                    s.classList.remove("active");
-                }
-            });
-            // Toggle 'active' class on the clicked summary
-            summary.classList.toggle("active");
         });
     });
-
 
 
 

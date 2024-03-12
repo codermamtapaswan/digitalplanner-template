@@ -264,7 +264,7 @@ form input {
 }
 
 .page-numbers::before {
-  border: 2px dashed var(--white);
+  border: 2px solid var(--white);
   border-right-color: transparent;
 }
 
@@ -520,6 +520,10 @@ blockquote::before {
 
 /* #All Author  and Author Single Page 
 =================================================*/
+.author-container {
+  background-color: var(--primary-color);
+}
+
 .digiplan-authors-page {
   background: url('/assets/img/star.svg') no-repeat center / cover;
 }
@@ -533,12 +537,9 @@ blockquote::before {
 }
 
 .all-author-page .author-container:hover {
-  background: var(--primary-color) !important;
+  background: var(--secondry-color) !important;
 }
 
-.author-container {
-  background-color: var(--primary-color);
-}
 
 /* # Contact Page Templates
 =================================================*/
