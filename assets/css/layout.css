@@ -382,9 +382,10 @@ blockquote,
 
 /*Sep button_____________Start*/
 .sep-btn {
-  padding: 5px 12px;
+  padding: 8px 15px;
   border-radius: 4px;
   display: inline-block;
+  text-transform: capitalize;
 }
 
 /* Social Icons _____________Start*/
@@ -649,33 +650,6 @@ header .dropdown:hover>ul {
   top: 35px;
   border-radius: 0px 8px 8px 0px;
 }
-
-/* .related .line {
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-} */
-
-/* .related .line::after {
-  content: "";
-  width: 80%;
-  height: 1px;
-} */
-
-/* .play {
-  position: relative;
-  padding-left: 25px;
-}
-
-.play::before {
-  position: absolute;
-  content: "";
-  width: 10px;
-  height: 10px;
-  left: 0px;
-  top: 7px;
-}*/
 
 .play:not(:last-child)::after {
   content: "";
@@ -1193,20 +1167,8 @@ textarea {
 }
 
 .contact-page .sep-btn {
-  background: var(--gradient);
-  padding: 13px;
   border: unset;
   width: 100%;
-  color: var(--white);
-}
-
-.contact-page input::placeholder,
-textarea::placeholder {
-  color: var(--white);
-}
-
-.contact-page input:focus {
-  border: 1px solid #fff;
 }
 
 /* # Thank You || Search Not Found  || 404 Page
@@ -1228,8 +1190,10 @@ textarea::placeholder {
   margin-top: -45px;
 }
 
-.robox-img {
-  animation: translateAnimation 0.8s ease-in-out infinite alternate;
+.error-page .sep-btn {
+  width: fit-content;
+  margin: auto;
+  border: unset;
 }
 
 .robox-img img {
@@ -1237,15 +1201,7 @@ textarea::placeholder {
   left: 135px;
 }
 
-@keyframes translateAnimation {
-  from {
-    transform: translateY(0);
-  }
 
-  to {
-    transform: translateY(-40px);
-  }
-}
 
 
 /* # Footer
@@ -1298,8 +1254,6 @@ footer .footer-category ul {
   filter: brightness(1);
   transition: all 0.5s;
 }
-
-
 
 .footer-category ul li a:hover {
   text-decoration: underline;

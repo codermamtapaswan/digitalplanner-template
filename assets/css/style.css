@@ -517,21 +517,52 @@ blockquote::before {
   border-left: 2px solid rgba(19, 204, 98, 1);
 }
 
-/* author details */
-.author-details {
+
+/* # Author Single Page 
+=================================================*/
+.author-container {
   background-color: var(--primary-color);
-  border-top: 1px solid rgba(19, 204, 98, 1);
 }
 
-.author-img img {
-  border: 3px solid #fff;
+/* # Contact Page Templates
+=================================================*/
+.contact-page {
+  background: url(../img/bg-world.svg) no-repeat center;
 }
 
-/* # All Author Page
-=================================================*/
+.contact-page form {
+  background-color: rgba(255, 255, 255, 0.1);
+}
 
-/* # Author Single Page
-=================================================*/
+.contact-mail,
+.contact-page .site-social-links {
+  background-color: var(--primary-color);
+}
+
+.contact-page input,
+textarea {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.contact-page input::placeholder,
+textarea::placeholder {
+  color: var(--white);
+}
+
+.contact-page input:focus {
+  border: 1px solid #fff;
+}
+
+:is(.error-page, .contact-page) .sep-btn {
+  background: var(--gradient);
+  color: #fff;
+}
+
+:is(.error-page, .contact-page) .sep-btn:hover {
+  background: var(--gradient-hover);
+  color: #fff;
+}
 
 /* # Thank You || Search Not Found  || 404 Page
 =================================================*/
@@ -540,14 +571,18 @@ blockquote::before {
   font-weight: 700;
 }
 
-:is(.error-page, .contact-page).sep-btn {
-  color: #fff;
+.robox-img {
+  animation: translateAnimation 0.8s ease-in-out infinite alternate;
 }
 
-.error-page .sep-btn {
-  background-image: var(--gradient);
-  width: fit-content;
-  margin: auto;
+@keyframes translateAnimation {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-40px);
+  }
 }
 
 /* # Footer
