@@ -1666,16 +1666,16 @@ footer .footer-category ul {
     display: block;
   }
 
-  .digi-single-page .sidebar {
+  .sidebar {
     order: 1;
     position: static;
   }
 
-  .digi-single-page .blog-content {
+  .blog-content {
     order: 2;
   }
 
-  .digi-single-page .related-post {
+  .related-post {
     order: 3;
   }
 
