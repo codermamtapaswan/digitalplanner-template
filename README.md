@@ -31,5 +31,5 @@ For more detailed instructions on using WordPress and customizing themes, refer 
 
 ## License
 
-Digital Planner is open-source software licensed under the [MIT License](LICENSE). You are free to use, modify, and distribute this theme for personal and commercial purposes.
+
 
