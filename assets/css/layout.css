@@ -104,8 +104,12 @@ textarea {
 
 button {
   cursor: pointer;
+  border: unset;
 }
 
+figure{
+  max-width: 100%;
+}
 
 /* # Common Class
 =================================================*/
@@ -124,7 +128,7 @@ button {
 
 .all-page :is(ul, ol):not(.site-social-links ul) li {
   line-height: 1.7;
-  margin-bottom: 20px;
+  margin-bottom:15px;
   position: relative;
 }
 
@@ -264,12 +268,6 @@ blockquote,
 .page-header p {
   margin-bottom: 0 !important;
 }
-
-.bg-sparkling {
-  height: 580px;
-  width: 100%;
-}
-
 .category-page {
   gap: 40px;
 }
@@ -341,15 +339,13 @@ blockquote,
 }
 
 .category-title {
-  font-size: 14px;
   text-transform: uppercase;
 }
 
-.author,
-.category-title,
-.date {
+.author, .category-title, .date {
   display: block;
   opacity: 0.7;
+  font-size: 14px;
 }
 
 /*Separator_____________Start*/
@@ -369,11 +365,9 @@ blockquote,
 
 .seperator::after {
   content: "";
-  /* width: 64%; */
   height: 1px;
   flex: 1;
   bottom: 8px;
-  /* margin: 30px 50px 0px 15px; */
 }
 
 .seperator .sep-btn {
@@ -382,7 +376,7 @@ blockquote,
 
 /*Sep button_____________Start*/
 .sep-btn {
-  padding: 8px 15px;
+  padding: 6px 20px;
   border-radius: 4px;
   display: inline-block;
   text-transform: capitalize;
@@ -650,13 +644,23 @@ header .dropdown:hover>ul {
   top: 35px;
   border-radius: 0px 8px 8px 0px;
 }
-
+.play{
+  padding-left: 30px;
+  position: relative;
+}
 .play:not(:last-child)::after {
   content: "";
 }
+.play::before {
+  position: absolute;
+  content: "";
+  width: 16px;
+  height: 16px;
+  left:0;
+  top: 5px;
+}
 
 .home-page .number {
-  counter-reset: term definition;
   position: sticky;
   top: 85px;
   border-radius: 8px;
@@ -669,7 +673,7 @@ header .dropdown:hover>ul {
 }
 
 .home-page .number .site-content:before {
-  content: counter(term) "";
+  content:"0" counter(term);
   counter-increment: term;
   position: absolute;
   left: 0;
@@ -906,22 +910,19 @@ blockquote::before {
 /* widgets */
 .widget-heading {
   border-radius: 0px 16px 0px 0px;
-  padding: 20px;
-  height: 45px;
+  padding: 10px 20px;
   width: fit-content;
   font-size: 18px;
   font-weight: 700;
-  position: relative;
   display: flex;
-  align-items: center;
-  gap: 5px;
+  /* align-items: center; */
+  gap: 10px;
 }
 
 .widget-heading::before {
-  display: flex;
   content: "";
-  width: 24px;
-  height: 25px;
+  width: 20px;
+  height: 21px;
 }
 
 .widget-content::before {
@@ -964,12 +965,11 @@ blockquote::before {
 
 .accordions summary::after {
   content: "";
-  width: 5px;
-  height: 5px;
+  width:16px;
+  height:16px;
   transition: all 0.5s ease;
-  padding: 10px;
-  border-radius: 4px;
   margin-left: auto;
+  flex: none;
 }
 
 .accordion-content {
@@ -994,6 +994,21 @@ blockquote::before {
 .all-author-page .author-container {
   background-color: transparent;
   border-radius: unset;
+  transition: all 0.5s ease;  
+  overflow: hidden;
+}
+.all-author-page .author-container  .author-content{
+  transform: translateY(15px);
+  transition: all 0.5s ease;  
+}
+
+.all-author-page .author-container p{
+  margin-bottom: 0 !important;
+}
+
+.all-author-page .author-container .author-img img{ 
+  transform: scale(1.2) !important;
+  transition: all 0.5s ease;
 }
 
 .auth-btn {
@@ -1001,9 +1016,24 @@ blockquote::before {
   align-items: center;
   justify-content: center;
   gap: 5px;
-
+  transition: all 0.5s ease;
+  transform: translateY(100px);
 }
 
+.all-author-page .author-container:hover .auth-btn{ 
+  transition: all 0.5s ease;
+  transform: translateY(15px);
+}
+
+.all-author-page .author-container:hover .author-img img{ 
+  transform: scale(1) !important;
+  transition: all 0.5s ease;
+}
+
+.all-author-page .author-container:hover .author-content{
+  transform: translateY(-10px);
+  transition: all 0.5s ease;  
+}
 
 /* # Author Single Page 
 =================================================*/
@@ -1030,24 +1060,30 @@ blockquote::before {
 
 /* # Contact Page Templates
 =================================================*/
-.contact-page .grid-50-50 {
-  align-items: unset;
+.contact-page p {
+  margin-bottom: 0 !important;
 }
 
 .contact-page form {
   padding: 30px;
+  border-radius: 8px;
 }
-
-.contact-mail {
+.contact-info-box{
   display: flex;
-  align-items: center;
   gap: 15px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 .contact-mail,
 .contact-page .site-social-links {
-  padding: 20px;
+  padding: 10px 50px;
   flex: 1;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .contact-page input,
@@ -1058,39 +1094,51 @@ textarea {
   width: 100%;
 }
 
-.contact-page .sep-btn {
-  border: unset;
-  width: 100%;
-}
-
 /* # Thank You || Search Not Found  || 404 Page
 =================================================*/
-.error-page {
+.error-page{
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   text-align: center;
-  gap: 10px;
 }
 
 .error-page :is(h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6) {
   margin-bottom: 0 !important;
 }
 
-.page-404.bg-sparkling {
-  height: 500px !important;
+.page-404 .error-page{
+  flex-direction:row;
+  height: 400px;
 }
 
-.page-404 .error-title {
+
+.page-404-content {
+  text-align: center;
+  gap: 10px;
+}
+
+.page-404-content .error-title {
+  margin-top: -45px;
+  position: relative;
+
+}
+.page-404-content .error-title {
   margin-top: -45px;
 }
 
-.error-page .sep-btn {
+:is(.error-page, .contact-page) .sep-btn {
+  margin: 0 auto;
+  display: flex;
   width: fit-content;
-  margin: auto;
-  border: unset;
 }
-
 .robox-img img {
-  position: absolute;
-  left: 135px;
+    position: absolute;
+    left: -260px;
+    transform: translateY(-100px);
 }
 
 
@@ -1116,7 +1164,6 @@ footer::before {
   position: absolute;
   content: "";
   height: 100%;
-  background: url(../img/footer\ bg.svg) no-repeat center;
   width: 100%;
   opacity: 0.1;
   z-index: -1;
@@ -1487,7 +1534,7 @@ footer .footer-category ul {
     display: block;
   }
 
-  .light-mode .dropdown::after {
+  .lightmode .dropdown::after {
     filter: unset !important;
   }
 
@@ -1586,8 +1633,7 @@ footer .footer-category ul {
     overflow-x: auto;
   }
 
-  .messages,
-  .contact-page .sep-btn {
+  .messages {
     margin-top: 10px;
   }
 

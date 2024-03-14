@@ -2,30 +2,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // Black and light mode code ============ start =====>
-    const toggleBtn = document.querySelector(".toggleBtn");
-    const header = document.querySelector("header");
-    const svgElements = document.querySelectorAll("svg");
+    const modeToggleBtn = document.querySelector(".toggleBtn");
 
-    function toggleDarkMode() {
-        document.body.classList.toggle("light-mode");
-        const isDarkMode = document.body.classList.contains("light-mode");
-        if (isDarkMode) {
-            document.documentElement.style.setProperty("--primary-color", "#fff");
-            document.documentElement.style.setProperty("--secondry-color", "#fff");
-            document.documentElement.style.setProperty("--white", "#000");
-            header.style.backgroundColor = "#fff";
-        } else {
-            document.documentElement.style.setProperty("--primary-color", "#002737");
-            document.documentElement.style.setProperty("--secondry-color", "#00212e");
-            document.documentElement.style.setProperty("--white", "#fff");
-            header.style.backgroundColor = "";
-            document.body.style.backgroundColor = "";
-        }
+    function toggleColorMode(){
+            document.body.classList.toggle("lightmode");
     }
-    toggleBtn.addEventListener("click", toggleDarkMode);
-
-
-
+    modeToggleBtn.addEventListener("click", toggleColorMode);
+    
 
     // sticky header on scroll ============ start =====>
     const headers = document.querySelector("header");
