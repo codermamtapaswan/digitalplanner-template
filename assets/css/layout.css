@@ -1519,7 +1519,16 @@ footer .footer-category ul {
   .dropdown::after,
   .dropdown .dropdown::after {
     background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m4 5.588 4 4 4-4' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
-    float: right;
+    position: absolute;
+    right: 5px;
+  }
+
+  .dropdown::after {
+    top: 20px;
+  }
+
+  .dropdown .dropdown::after {
+    top: 15px;
   }
 
   .dropdown {

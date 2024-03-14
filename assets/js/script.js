@@ -4,11 +4,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Black and light mode code ============ start =====>
     const modeToggleBtn = document.querySelector(".toggleBtn");
 
-    function toggleColorMode(){
-            document.body.classList.toggle("lightmode");
+    function toggleColorMode() {
+        document.body.classList.toggle("lightmode");
     }
     modeToggleBtn.addEventListener("click", toggleColorMode);
-    
+
 
     // sticky header on scroll ============ start =====>
     const headers = document.querySelector("header");
@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // mobile Dropdown  ============ start =====>
     const dropdowns = document.querySelectorAll(".dropdown");
+
     function toggleDropdown(e) {
         e.preventDefault();
         e.stopPropagation();
@@ -77,32 +78,19 @@ document.addEventListener("DOMContentLoaded", function () {
         li.classList.toggle("showMenu");
     }
 
+    document.addEventListener("click", (e) => {
+        dropdowns.forEach((dropdown) => {
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove("showMenu");
+            }
+        });
+    });
+
     dropdowns.forEach((dropdown) => {
         dropdown.addEventListener("click", toggleDropdown);
     });
 
-    // // Add a click event listener to the document to close dropdowns when clicking outside
-    document.addEventListener("click", (e) => {
-        const isMenuActive = menuNav.classList.contains("show_menu");
-        const targetElement = toggleBtn.querySelector(e.target.tagName);
 
-
-        if (
-            ![...dropdowns].some((dropdown) => dropdown.contains(e.target)) &&
-            !targetElement
-        ) {
-            dropdowns.forEach((dropdown) => {
-                dropdown.classList.remove("showMenu");
-            });
-
-
-            menuNav.classList.remove("show_menu");
-            if (isMenuActive) {
-                toggleBtn.innerHTML = isMenuActive ? svg.bar1 : svg.cross;
-            }
-
-        }
-    });
 
 
 
