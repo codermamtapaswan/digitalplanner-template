@@ -64,31 +64,32 @@ document.addEventListener("DOMContentLoaded", function () {
     const dropdowns = document.querySelectorAll(".dropdown");
 
     function toggleDropdown(e) {
-        e.preventDefault();
         e.stopPropagation();
 
-        const li = e.target.parentNode;
-
-        dropdowns.forEach((dropdown) => {
-            if (dropdown !== li && !dropdown.contains(li)) {
-                dropdown.classList.remove("showMenu");
+        const li = e.currentTarget;
+        dropdowns.forEach((otherDropdown) => {
+            if (otherDropdown !== li) {
+                otherDropdown.classList.remove("showMenu");
             }
         });
 
         li.classList.toggle("showMenu");
     }
 
-    document.addEventListener("click", (e) => {
-        dropdowns.forEach((dropdown) => {
-            if (!dropdown.contains(e.target)) {
-                dropdown.classList.remove("showMenu");
-            }
-        });
-    });
-
     dropdowns.forEach((dropdown) => {
         dropdown.addEventListener("click", toggleDropdown);
     });
+
+    // Add a click event listener to the document to close dropdowns when clicking outside
+    document.addEventListener("click", (e) => {
+        if (![...dropdowns].some((dropdown) => dropdown.contains(e.target))) {
+            dropdowns.forEach((dropdown) => {
+                dropdown.classList.remove("showMenu");
+            });
+        }
+    });
+
+
 
 
 

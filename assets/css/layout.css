@@ -609,12 +609,6 @@ header .search-bar-show {
   z-index: 10;
 }
 
-header .dropdown:hover>ul {
-  transform: scale(1);
-  visibility: visible;
-  opacity: 1;
-}
-
 .show-ul {
   transform: translate(0%);
 }
@@ -1463,6 +1457,15 @@ footer .footer-category ul {
 
 }
 
+@media screen and (min-width:1023px) {
+  header .dropdown:hover>ul {
+    transform: scale(1);
+    visibility: visible;
+    opacity: 1;
+  }
+
+}
+
 @media screen and (max-width: 1023px) {
   #trip-logo img {
     height: 30px;
@@ -1528,7 +1531,7 @@ footer .footer-category ul {
   }
 
   .dropdown .dropdown::after {
-    top: 15px;
+    top: 10px;
   }
 
   .dropdown {
@@ -1542,8 +1545,11 @@ footer .footer-category ul {
   }
 
 
-  header ul li.showMenu ul {
+  header ul li.showMenu>ul {
     display: block !important;
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
   }
 
   header ul li.showMenu::after {
