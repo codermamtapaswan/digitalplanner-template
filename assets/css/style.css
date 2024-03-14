@@ -249,7 +249,7 @@ header .mob-search-btn {
 }
 
 header ul li ul a {
-  color: #000;
+  color: #000 !important;
 }
 
 .dropdown::after,

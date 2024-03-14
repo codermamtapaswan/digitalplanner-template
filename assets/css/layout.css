@@ -107,13 +107,14 @@ button {
   border: unset;
 }
 
-figure{
+figure {
   max-width: 100%;
 }
 
 /* # Common Class
 =================================================*/
-.all-page {
+.all-page,
+.home-page {
   padding: 40px 0;
 }
 
@@ -128,7 +129,7 @@ figure{
 
 .all-page :is(ul, ol):not(.site-social-links ul) li {
   line-height: 1.7;
-  margin-bottom:15px;
+  margin-bottom: 15px;
   position: relative;
 }
 
@@ -268,6 +269,7 @@ blockquote,
 .page-header p {
   margin-bottom: 0 !important;
 }
+
 .category-page {
   gap: 40px;
 }
@@ -342,7 +344,9 @@ blockquote,
   text-transform: uppercase;
 }
 
-.author, .category-title, .date {
+.author,
+.category-title,
+.date {
   display: block;
   opacity: 0.7;
   font-size: 14px;
@@ -644,19 +648,22 @@ header .dropdown:hover>ul {
   top: 35px;
   border-radius: 0px 8px 8px 0px;
 }
-.play{
+
+.play {
   padding-left: 30px;
   position: relative;
 }
+
 .play:not(:last-child)::after {
   content: "";
 }
+
 .play::before {
   position: absolute;
   content: "";
   width: 16px;
   height: 16px;
-  left:0;
+  left: 0;
   top: 5px;
 }
 
@@ -673,7 +680,7 @@ header .dropdown:hover>ul {
 }
 
 .home-page .number .site-content:before {
-  content:"0" counter(term);
+  content: "0" counter(term);
   counter-increment: term;
   position: absolute;
   left: 0;
@@ -965,8 +972,8 @@ blockquote::before {
 
 .accordions summary::after {
   content: "";
-  width:16px;
-  height:16px;
+  width: 16px;
+  height: 16px;
   transition: all 0.5s ease;
   margin-left: auto;
   flex: none;
@@ -994,19 +1001,20 @@ blockquote::before {
 .all-author-page .author-container {
   background-color: transparent;
   border-radius: unset;
-  transition: all 0.5s ease;  
+  transition: all 0.5s ease;
   overflow: hidden;
 }
-.all-author-page .author-container  .author-content{
+
+.all-author-page .author-container .author-content {
   transform: translateY(15px);
-  transition: all 0.5s ease;  
+  transition: all 0.5s ease;
 }
 
-.all-author-page .author-container p{
+.all-author-page .author-container p {
   margin-bottom: 0 !important;
 }
 
-.all-author-page .author-container .author-img img{ 
+.all-author-page .author-container .author-img img {
   transform: scale(1.2) !important;
   transition: all 0.5s ease;
 }
@@ -1020,19 +1028,19 @@ blockquote::before {
   transform: translateY(100px);
 }
 
-.all-author-page .author-container:hover .auth-btn{ 
+.all-author-page .author-container:hover .auth-btn {
   transition: all 0.5s ease;
   transform: translateY(15px);
 }
 
-.all-author-page .author-container:hover .author-img img{ 
+.all-author-page .author-container:hover .author-img img {
   transform: scale(1) !important;
   transition: all 0.5s ease;
 }
 
-.all-author-page .author-container:hover .author-content{
+.all-author-page .author-container:hover .author-content {
   transform: translateY(-10px);
-  transition: all 0.5s ease;  
+  transition: all 0.5s ease;
 }
 
 /* # Author Single Page 
@@ -1068,7 +1076,8 @@ blockquote::before {
   padding: 30px;
   border-radius: 8px;
 }
-.contact-info-box{
+
+.contact-info-box {
   display: flex;
   gap: 15px;
   margin: 0 auto;
@@ -1096,7 +1105,7 @@ textarea {
 
 /* # Thank You || Search Not Found  || 404 Page
 =================================================*/
-.error-page{
+.error-page {
   width: 100%;
   height: 500px;
   display: flex;
@@ -1110,8 +1119,8 @@ textarea {
   margin-bottom: 0 !important;
 }
 
-.page-404 .error-page{
-  flex-direction:row;
+.page-404 .error-page {
+  flex-direction: row;
   height: 400px;
 }
 
@@ -1126,6 +1135,7 @@ textarea {
   position: relative;
 
 }
+
 .page-404-content .error-title {
   margin-top: -45px;
 }
@@ -1135,10 +1145,11 @@ textarea {
   display: flex;
   width: fit-content;
 }
+
 .robox-img img {
-    position: absolute;
-    left: -260px;
-    transform: translateY(-100px);
+  position: absolute;
+  left: -260px;
+  transform: translateY(-100px);
 }
 
 
@@ -1657,11 +1668,11 @@ footer .footer-category ul {
     margin-top: -15px;
   }
 
-  .number {
+  .home-page .number {
     padding-top: 15px;
   }
 
-  .number .big-category {
+  .home-page .number .big-category {
     margin: 0 auto;
   }
 
