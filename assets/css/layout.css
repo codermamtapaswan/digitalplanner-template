@@ -1651,8 +1651,12 @@ footer .footer-category ul {
     grid-template-columns: auto !important;
   }
 
-  .team li {
-    flex: 0 0 100%;
+  .page-404 .error-page {
+    flex-direction: column-reverse !important;
+  }
+
+  .robox-img img {
+    transform: translateY(-20px);
   }
 
   .table-responsive {
