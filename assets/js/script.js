@@ -133,16 +133,19 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     // Initial check to hide on page load if it's a mobile device
-    hideTableOfContentOnMobile();
-    tableHeader.addEventListener("click", function () {
-        if (tableOfcontentBody.classList.contains("hidden")) {
-            tableOfcontentBody.classList.remove("hidden");
-            tableCrossBtn.style.transform = "rotate(0deg)";
-        } else {
-            tableOfcontentBody.classList.add("hidden");
-            tableCrossBtn.style.transform = "rotate(270deg)";
-        }
-    });
+    if (tableHeader) {
+        hideTableOfContentOnMobile();
+
+        tableHeader.addEventListener("click", function () {
+            if (tableOfcontentBody.classList.contains("hidden")) {
+                tableOfcontentBody.classList.remove("hidden");
+                tableCrossBtn.style.transform = "rotate(0deg)";
+            } else {
+                tableOfcontentBody.classList.add("hidden");
+                tableCrossBtn.style.transform = "rotate(270deg)";
+            }
+        });
+    }
     // Check on window resize to adjust visibility
     window.addEventListener("resize", hideTableOfContentOnMobile);
 

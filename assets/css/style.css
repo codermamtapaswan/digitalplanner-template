@@ -51,6 +51,7 @@
   filter: invert(1) !important;
 }
 
+.lightmode .show-ul .dropdown::after,
 .lightmode .dropdown .dropdown::after {
   filter: invert(0) !important;
 }
