@@ -135,7 +135,7 @@ form input {
 }
 
 .bg-sparkling {
-  background: url('/assets/img/star.svg') no-repeat center;
+  background: url(../img/star.svg) no-repeat center;
   background-size: contain;
 }
 
@@ -548,7 +548,7 @@ footer {
 }
 
 footer::before {
-  background: url('/assets/img/footer-bg.svg') no-repeat center / cover;
+  background: url(../img/footer-bg.svg) no-repeat center / cover;
 }
 
 footer .h6 {
@@ -603,11 +603,8 @@ footer .h6 {
     font-size: 40px;
   }
 
-  .thankyou-container {
+  .error-page {
     background: unset;
   }
-
-
-
 
 }
