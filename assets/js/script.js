@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function toggleDropdown(e) {
         e.stopPropagation();
+        // e.preventDefault();
 
         const li = e.currentTarget;
         dropdowns.forEach((otherDropdown) => {
