@@ -136,7 +136,7 @@ form input {
 
 .bg-sparkling {
   background: url(../img/star.svg) no-repeat center;
-  background-size: contain;
+  background-size: cover;
 }
 
 .img-placeholder {
