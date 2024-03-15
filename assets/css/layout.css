@@ -418,7 +418,8 @@ blockquote,
 
 /* border-bottom _____________Start */
 
-.border-bottom>*{
+.border-bottom>*:not(:first-child),
+.border-bottom>*:not(:last-child){
   padding: 20px 0;
 }
 
@@ -1736,9 +1737,6 @@ footer .footer-category ul {
 }
 .related-post .grid-30 {
     grid-template-columns: 30% auto !important;
-}
-.related-post .site-card {
-    gap: 15px;
 }
 
 .related-post .img-placeholder {

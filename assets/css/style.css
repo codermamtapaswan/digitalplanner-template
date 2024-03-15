@@ -24,7 +24,6 @@
 }
 
 
-
 .lightmode .contact-page {
   background: unset;
 }
@@ -315,9 +314,9 @@ header form button {
 
 /* Blog header _____________start */
 
-.timeline,
-.toc-body {
+.timeline, .toc-body {
   border: 1px solid #c7c5c52b;
+  background: var(--secondary-color);
 }
 
 .timeline>*:not(:first-child) {
@@ -360,11 +359,6 @@ header form button {
 
 .toc-body ul li a {
   color: #fff;
-}
-
-.accordions summary::before,
-.tableofcontent ul li::before {
-  color: var(--color);
 }
 
 /* Blog Contents _____________start */
