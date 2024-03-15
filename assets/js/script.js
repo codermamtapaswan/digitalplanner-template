@@ -92,10 +92,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-
-
-
     // Scroll to top   ============ start =====>
     let mybutton = document.getElementById("myBtn");
     window.onscroll = function () {
@@ -135,7 +131,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initial check to hide on page load if it's a mobile device
     if (tableHeader) {
         hideTableOfContentOnMobile();
-
         tableHeader.addEventListener("click", function () {
             if (tableOfcontentBody.classList.contains("hidden")) {
                 tableOfcontentBody.classList.remove("hidden");
