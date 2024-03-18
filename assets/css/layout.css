@@ -923,10 +923,10 @@ blockquote::before {
 .widget-content::before {
   content: "";
   position: absolute;
-  width: 100%;
+  width: calc(100% + 2px);
   height: 3px;
-  left: 0;
-  top: 0;
+  left: -1px;
+  top: 0px;
 }
 
 .widget-content {
@@ -1514,9 +1514,13 @@ footer .footer-category ul {
     height: fit-content;
     width: 100%;
     left: 0%;
-    margin: 10px 0px;
+    margin-top:10px;
     top: 0px;
     display: none;
+  }
+
+  header ul .dropdown ul ul {
+    margin-top:40px;
   }
 
 
