@@ -190,8 +190,8 @@ form input {
 
 
 /* border-bottom _____________Start */
-.border-bottom>*:not(:first-child){
-  border-top: 1px solid  rgba(217, 217, 217, 0.2);
+.border-bottom:not(:first-child) {
+  border-top: 1px solid rgba(217, 217, 217, 0.2);
 }
 
 /* pagination_____________start */
@@ -315,7 +315,8 @@ header form button {
 
 /* Blog header _____________start */
 
-.timeline, .toc-body {
+.timeline,
+.toc-body {
   border: 1px solid #c7c5c52b;
   background: var(--secondary-color);
 }

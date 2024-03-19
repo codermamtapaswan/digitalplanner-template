@@ -1,14 +1,41 @@
+// Retrieve the toggle button and determine the initial color mode
+const modeToggleBtn = document.querySelector(".toggleBtn");
+let isLightMode = localStorage.getItem("colorMode") === "light";
+
+// Function to toggle color mode
+function toggleColorMode() {
+    isLightMode = !isLightMode;
+    if (isLightMode) {
+        document.body.classList.add("lightmode");
+        localStorage.setItem("colorMode", "light");
+    } else {
+        document.body.classList.remove("lightmode");
+        localStorage.setItem("colorMode", "dark");
+    }
+}
+
+// Set initial color mode immediately upon page load
+if (isLightMode) {
+    document.body.classList.add("lightmode");
+} else {
+    localStorage.setItem("colorMode", "dark");
+}
+
+// Attach toggle event listener to the toggle button
+modeToggleBtn.addEventListener("click", toggleColorMode);
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
 
 
     // Black and light mode code ============ start =====>
-    const modeToggleBtn = document.querySelector(".toggleBtn");
+    // const modeToggleBtn = document.querySelector(".toggleBtn");
 
-    function toggleColorMode() {
-        document.body.classList.toggle("lightmode");
-    }
-    modeToggleBtn.addEventListener("click", toggleColorMode);
-
+    // function toggleColorMode() {
+    //     document.body.classList.toggle("lightmode");
+    // }
+    // modeToggleBtn.addEventListener("click", toggleColorMode);
 
     // sticky header on scroll ============ start =====>
     const headers = document.querySelector("header");
@@ -60,30 +87,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // mobile Dropdown  ============ start =====>
-     const navDropdowns = document.querySelectorAll(".dropdown");
-        navDropdowns.forEach((parentDropdown) => {
+    const navDropdowns = document.querySelectorAll(".dropdown");
+    navDropdowns.forEach((parentDropdown) => {
 
-          parentDropdown.addEventListener("click", function (e) {
+        parentDropdown.addEventListener("click", function (e) {
             this.classList.toggle("showMenu");
-          });
-      
-          const subDropdowns = parentDropdown.querySelectorAll(".dropdown ul");
-          subDropdowns.forEach((subDropdown) => {
-            subDropdown.addEventListener("click", function (event) {
-              event.stopPropagation(); // Prevents the click event from reaching the parent dropdown
-            });
-          });
-          
         });
 
-        // Add a click event listener to the document to close dropdowns when clicking outside
-        document.addEventListener("click", (e) => {
-            navDropdowns.forEach((dropdown) => {
-                if (!dropdown.contains(e.target)) {
-                    dropdown.classList.remove("showMenu");
-                }
+        const subDropdowns = parentDropdown.querySelectorAll(".dropdown ul");
+        subDropdowns.forEach((subDropdown) => {
+            subDropdown.addEventListener("click", function (event) {
+                event.stopPropagation(); // Prevents the click event from reaching the parent dropdown
             });
         });
+
+    });
+
+    // Add a click event listener to the document to close dropdowns when clicking outside
+    document.addEventListener("click", (e) => {
+        navDropdowns.forEach((dropdown) => {
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove("showMenu");
+            }
+        });
+    });
 
 
 
@@ -197,3 +224,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 });
+
+
+
+
