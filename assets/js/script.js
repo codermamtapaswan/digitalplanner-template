@@ -44,55 +44,46 @@ document.addEventListener("DOMContentLoaded", function () {
     const cancelBtn = document.querySelector(".cancel-btn");
     const headerUl = document.querySelector("header ul");
 
-    function toggleButtons(toggleslideBtn, cancelBtn, headerUl) {
+    function toggleButtons(cancelBtn, headerUl) {
         headerUl.classList.toggle("show-ul");
-        toggleslideBtn.style.display = toggleslideBtn.style.display === "none" ? "block" : "none";
         cancelBtn.style.display = cancelBtn.style.display === "block" ? "none" : "block";
     }
 
     toggleslideBtn.addEventListener("click", function () {
-        toggleButtons(toggleslideBtn, cancelBtn, headerUl);
+        toggleButtons(cancelBtn, headerUl);
     });
 
     cancelBtn.addEventListener("click", function () {
-        toggleButtons(toggleslideBtn, cancelBtn, headerUl);
+        toggleButtons(cancelBtn, headerUl);
     });
 
 
 
     // mobile Dropdown  ============ start =====>
-    const dropdowns = document.querySelectorAll(".dropdown");
+     const navDropdowns = document.querySelectorAll(".dropdown");
+        navDropdowns.forEach((parentDropdown) => {
 
-    function toggleDropdown(e) {
-        e.stopPropagation();
-        // e.preventDefault();
-
-        const li = e.currentTarget;
-        dropdowns.forEach((otherDropdown) => {
-            if (otherDropdown !== li) {
-                otherDropdown.classList.remove("showMenu");
-            }
+          parentDropdown.addEventListener("click", function (e) {
+            this.classList.toggle("showMenu");
+          });
+      
+          const subDropdowns = parentDropdown.querySelectorAll(".dropdown ul");
+          subDropdowns.forEach((subDropdown) => {
+            subDropdown.addEventListener("click", function (event) {
+              event.stopPropagation(); // Prevents the click event from reaching the parent dropdown
+            });
+          });
+          
         });
 
-        li.classList.toggle("showMenu");
-    }
-
-    dropdowns.forEach((dropdown) => {
-        dropdown.addEventListener("click", toggleDropdown);
-    });
-
-    // Add a click event listener to the document to close dropdowns when clicking outside
-    document.addEventListener("click", (e) => {
-        if (![...dropdowns].some((dropdown) => dropdown.contains(e.target))) {
-            dropdowns.forEach((dropdown) => {
-                dropdown.classList.remove("showMenu");
+        // Add a click event listener to the document to close dropdowns when clicking outside
+        document.addEventListener("click", (e) => {
+            navDropdowns.forEach((dropdown) => {
+                if (!dropdown.contains(e.target)) {
+                    dropdown.classList.remove("showMenu");
+                }
             });
-        }
-    });
-
-
-
-
+        });
 
 
 
@@ -135,7 +126,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initial check to hide on page load if it's a mobile device
     if (tableHeader) {
         hideTableOfContentOnMobile();
-
         tableHeader.addEventListener("click", function () {
             if (tableOfcontentBody.classList.contains("hidden")) {
                 tableOfcontentBody.classList.remove("hidden");

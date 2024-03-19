@@ -24,7 +24,6 @@
 }
 
 
-
 .lightmode .contact-page {
   background: unset;
 }
@@ -191,8 +190,8 @@ form input {
 
 
 /* border-bottom _____________Start */
-.border-bottom>*:not(:first-child):before {
-  background-color: rgba(217, 217, 217, 0.3);
+.border-bottom>*:not(:first-child){
+  border-top: 1px solid  rgba(217, 217, 217, 0.2);
 }
 
 /* pagination_____________start */
@@ -239,6 +238,7 @@ header {
   background-color: var(--primary-color);
   border-bottom: 1px solid #c7c5c52b;
 }
+
 
 header ul .dropdown ul {
   background: #fff;
@@ -315,9 +315,9 @@ header form button {
 
 /* Blog header _____________start */
 
-.timeline,
-.toc-body {
+.timeline, .toc-body {
   border: 1px solid #c7c5c52b;
+  background: var(--secondary-color);
 }
 
 .timeline>*:not(:first-child) {
@@ -360,11 +360,6 @@ header form button {
 
 .toc-body ul li a {
   color: #fff;
-}
-
-.accordions summary::before,
-.tableofcontent ul li::before {
-  color: var(--color);
 }
 
 /* Blog Contents _____________start */
