@@ -611,6 +611,9 @@ header .search-bar-show {
 
 .show-ul {
   transform: translate(0%);
+  overflow-y: auto;
+
+
 }
 
 .toggleBtn {
@@ -1500,7 +1503,6 @@ footer .footer-category ul {
     z-index: 10;
     transform: translateX(-100%);
     display: block;
-    overflow-y: auto;
   }
 
 
