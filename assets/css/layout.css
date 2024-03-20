@@ -862,7 +862,7 @@ header .search-bar-show {
 }
 
 .toc-body::-webkit-scrollbar {
-  width: 10px;
+  width: 10px !important;
 }
 
 /* Blog Contents _____________start */
@@ -1659,10 +1659,20 @@ footer .footer-category ul {
     grid-template-columns: 30% auto;
 
   }
+  .digiplan-container-bg-1 .big-head{
+    font-size: 18px !important;
+    line-height: 28px !important;
+  }
+  .digiplan-container-bg-1 .category-title{
+    display: none;
+  }
 
 }
 
 @media screen and (max-width: 600px) {
+  .digiplan-container-bg-1 .category-title{
+    display:block;
+  }
   header ul .dropdown ul .dropdown ul {
     position: absolute;
     left: 0%;

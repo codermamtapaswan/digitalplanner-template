@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // modeToggleBtn.addEventListener("click", toggleColorMode);
 
     // sticky header on scroll ============ start =====>
+    
     const headers = document.querySelector("header");
     function handleScroll() {
         if (window.scrollY > 0) {
