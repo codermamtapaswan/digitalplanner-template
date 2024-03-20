@@ -81,6 +81,12 @@
   filter: invert(1);
 }
 
+.lightmode .contact-page form {
+  border: 1px solid rgba(0, 0, 0, .1);
+}
+.lightmode .site-social-links ul li a:hover {
+  background: var(--primary-color);
+}
 
 /* # General
 =================================================*/
@@ -129,7 +135,7 @@ form input {
   font-weight: 600;
 }
 
-.all-page :is(p, li, h2, h3, h4, h5, h6, summary) a:hover {
+.all-page :is(p, li, h2, h3, h4, h5, h6, summary):not(#breadcrumbs, .tableofcontent ul li, .site-social-links ul li) a:hover {
   border-bottom: none;
   transition: all 0.3s;
 }
