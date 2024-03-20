@@ -1,8 +1,8 @@
-# Digital Planner - WordPress Theme Template
+# Digital Planner - html Theme Template
 
 Digital Planner is a blog website template designed to be easily converted into a WordPress theme. This template provides a clean and modern layout for creating a digital planner or journaling website on the WordPress platform.
 
-![127 0 0 1_5500_index html (1)](https://github.com/codermamtapaswan/digitalplanner-template/assets/163414646/8fa58e16-8af6-43c5-b082-f0616865a7cd)
+![127 0 0 1_5500_index html (2)](https://github.com/codermamtapaswan/digitalplanner-template/assets/163414646/9dd11c33-3306-4509-8bd1-bf6d1185ed99)
 
 
 ## Features
