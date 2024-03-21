@@ -252,7 +252,7 @@ body {
 }
 
 /* all widgets remove margin-bottom from last child */
-:is(.author-content, .accordion-content, .page-content, .widget-content, .digital-pc-body, blockquote, ul, ol)>*:last-child {
+:is(.author-content, .accordion-content, .page-content, .widget-content, .digital-pc-body, blockquote, .toc-body, ul, ol)>*:last-child {
   margin-bottom: 0 !important;
 }
 
@@ -294,14 +294,6 @@ blockquote,
 }
 
 /* Site Cards_____________Starts */
-.site-card {
-  /* display: grid;
-  gap: 20px;
-  align-items: center;
-  position: relative; */
-}
-
-
 .img-placeholder,
 .img-placeholder img {
   border-radius: 8px;
@@ -351,10 +343,13 @@ blockquote,
 .author,
 .category-title,
 .date {
-  display: block;
+  width: fit-content;
+  display: flex;
   opacity: 0.7;
   font-size: 14px;
 }
+
+
 
 /*Separator_____________Start*/
 .seperator {
@@ -606,6 +601,7 @@ header .mob-search-btn {
   justify-content: center;
   cursor: pointer;
   display: flex;
+  user-select: none;
 }
 
 header .search-bar-show {
@@ -658,8 +654,8 @@ header .search-bar-show {
   position: relative;
 }
 
-.play:not(:last-child)::after {
-  content: "";
+.play:not(:last-child) {
+  padding-bottom: 15px;
 }
 
 .play::before {
@@ -675,12 +671,16 @@ header .search-bar-show {
   position: sticky;
   top: 85px;
   border-radius: 8px;
-  padding: 30px 30px 30px 20px;
+  padding: 20px 30px 30px 20px;
 }
 
 .home-page .number .site-content {
   position: relative;
-  padding-left: 50px;
+  padding: 15px 0px 15px 50px;
+}
+
+.number .site-content:last-child {
+  padding-bottom: 0px;
 }
 
 .home-page .number .site-content:before {
@@ -688,7 +688,7 @@ header .search-bar-show {
   counter-increment: term;
   position: absolute;
   left: 0;
-  top: 5px;
+  top: 15px;
   border-radius: 50%;
   width: 35px;
   height: 35px;
@@ -697,10 +697,6 @@ header .search-bar-show {
   align-items: center;
 }
 
-.number .site-content:not(:last-child)::after {
-  content: "";
-  padding-top: 20px;
-}
 
 .number .h5 {
   margin-bottom: 0 !important;
@@ -1042,6 +1038,10 @@ blockquote::before {
   transform: translateY(100px);
 }
 
+.auth-btn:hover {
+  text-decoration: underline;
+}
+
 .all-author-page .author-container:hover .auth-btn {
   transition: all 0.5s ease;
   transform: translateY(15px);
@@ -1078,6 +1078,10 @@ blockquote::before {
 
 .author-content .h5 {
   margin-bottom: 0 !important;
+}
+
+.author-content .h5:hover {
+  text-decoration: underline;
 }
 
 /* # Contact Page Templates
@@ -1732,12 +1736,7 @@ footer .footer-category ul {
   }
 
   .big-category {
-    position: unset;
-    font-size: 30px !important;
-    opacity: 1;
-    writing-mode: unset;
-    rotate: 0deg;
-    font-weight: 700;
+    display: none;
   }
 
   header .search-bar-show {
