@@ -573,6 +573,7 @@ header ul .dropdown ul .dropdown ul {
   left: calc(100% + 20px);
   top: 10px;
 }
+
 .toggle-slide-btn,
 .cancel-btn,
 .search-form {
@@ -1146,11 +1147,6 @@ textarea {
 .page-404-content .error-title {
   margin-top: -45px;
   position: relative;
-
-}
-
-.page-404-content .error-title {
-  margin-top: -45px;
 }
 
 :is(.error-page, .contact-page) .sep-btn {
@@ -1479,7 +1475,7 @@ footer .footer-category ul {
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   header ul .dropdown ul .dropdown ul {
     left: 0%;
-    top:30px;
+    top: 30px;
   }
 
   .dropdown::after {
@@ -1648,13 +1644,13 @@ footer .footer-category ul {
     display: block;
   }
 
- 
+
   .robox-img img {
     position: absolute;
     left: -190px;
-    height:250px;
+    height: 250px;
     transform: translateY(-5px);
-}
+  }
 
 }
 
@@ -1663,20 +1659,23 @@ footer .footer-category ul {
     grid-template-columns: 30% auto;
 
   }
-  .digiplan-container-bg-1 .big-head{
+
+  .digiplan-container-bg-1 .big-head {
     font-size: 18px !important;
     line-height: 28px !important;
   }
-  .digiplan-container-bg-1 .category-title{
+
+  .digiplan-container-bg-1 .category-title {
     display: none;
   }
 
 }
 
 @media screen and (max-width: 600px) {
-  .digiplan-container-bg-1 .category-title{
-    display:block;
+  .digiplan-container-bg-1 .category-title {
+    display: block;
   }
+
   header ul .dropdown ul .dropdown ul {
     position: absolute;
     left: 0%;
@@ -1704,20 +1703,8 @@ footer .footer-category ul {
     grid-template-columns: auto !important;
   }
 
-  .page-404 .error-page {
-    flex-direction: column-reverse !important;
-  }
-
-  .robox-img img {
-    transform: translateY(-20px);
-  }
-
   .table-responsive {
     overflow-x: auto;
-  }
-
-  .messages {
-    margin-top: 10px;
   }
 
   .contact-page form {
@@ -1734,10 +1721,6 @@ footer .footer-category ul {
     margin: 10px 0px;
     display: block;
     text-align: center;
-  }
-
-  .error-title {
-    margin-top: -15px;
   }
 
   .home-page .number {
@@ -1802,11 +1785,21 @@ footer .footer-category ul {
     line-height: 21px;
   }
 
-  .robox-img{
+  .robox-img {
     display: none !important;
   }
-  .error-page{
+
+  .error-page {
+    padding-top: 20px;
     height: auto !important;
+  }
+
+  .page-404-content .error-title {
+    margin: 0 !important;
+  }
+
+  .page-404-content {
+    gap: 0px !important;
   }
 
 }
