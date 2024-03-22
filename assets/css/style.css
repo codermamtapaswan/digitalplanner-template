@@ -594,9 +594,9 @@ footer .h6 {
     font-size: 25px;
   }
 
-  .subhead {
-    font-size: 16px;
-    line-height: 30px;
+  .subhead,.number .h5  {
+    font-size: 18px !important;
+    line-height: 30px !important;
   }
 
   .error-title {
@@ -606,5 +606,6 @@ footer .h6 {
   .error-page {
     background: unset;
   }
+
 
 }
