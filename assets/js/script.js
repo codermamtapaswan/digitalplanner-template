@@ -1,24 +1,24 @@
 // Retrieve the toggle button and determine the initial color mode
 const modeToggleBtn = document.querySelector(".toggleBtn");
-let isLightMode = localStorage.getItem("colorMode") === "light";
+let isdarkmode = localStorage.getItem("colorMode") === "dark";
 
 // Function to toggle color mode
 function toggleColorMode() {
-    isLightMode = !isLightMode;
-    if (isLightMode) {
-        document.body.classList.add("lightmode");
-        localStorage.setItem("colorMode", "light");
-    } else {
-        document.body.classList.remove("lightmode");
+    isdarkmode = !isdarkmode;
+    if (isdarkmode) {
+        document.body.classList.add("darkmode");
         localStorage.setItem("colorMode", "dark");
+    } else {
+        document.body.classList.remove("darkmode");
+        localStorage.setItem("colorMode", "light");
     }
 }
 
 // Set initial color mode immediately upon page load
-if (isLightMode) {
-    document.body.classList.add("lightmode");
+if (isdarkmode) {
+    document.body.classList.add("darkmode");
 } else {
-    localStorage.setItem("colorMode", "dark");
+    localStorage.setItem("colorMode", "light");
 }
 
 // Attach toggle event listener to the toggle button
