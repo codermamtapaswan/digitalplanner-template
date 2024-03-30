@@ -495,6 +495,7 @@ header>.container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .logo-first {
@@ -570,44 +571,56 @@ header ul .dropdown ul .dropdown ul {
 }
 
 .toggle-slide-btn,
-.cancel-btn{
+.cancel-btn {
   display: none;
 }
 
-header form {
-  display: flex;
-  align-items: center;
-}
 
-header form input {
-  width: 300px;
-  padding: 10px;
-}
-
-header form button {
-  position: absolute;
-  right: 14px;
-  cursor: pointer;
-}
 
 header .mob-search-btn {
   cursor: pointer;
-  user-select: none;
+  stroke: var(--color);
+  fill: var(--color);
+  margin-bottom: 3px;
 }
+
+.search-form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 64px;
+  width: calc(100% - 50px);
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.search-form input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+}
+
+.search-form .search-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 60px;
+  width: 70px;
+  cursor: pointer;
+}
+
 
 header .search-bar-show {
   display: block;
-  position: absolute;
-  top: 60px;
-  right: 10%;
+  transition: all 0.3s ease;
   z-index: 10;
 }
 
 .show-ul {
   transform: translate(0%);
   overflow-y: auto;
-
-
 }
 
 .toggleBtn {
@@ -1501,9 +1514,6 @@ footer .footer-category ul {
     order: 3;
   }
 
-  header .mob-search-btn {
-    margin-left: 0px;
-  }
 
   header nav {
     margin-left: unset !important;
@@ -1730,9 +1740,10 @@ footer .footer-category ul {
     display: none;
   }
 
-  header .search-bar-show {
-    right: 10px;
+  .search-form .search-btn {
+    right: -20px;
   }
+
 
   [class*="digiplan-container-bg"] {
     padding: 25px 0;
