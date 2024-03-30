@@ -1,24 +1,24 @@
 // Retrieve the toggle button and determine the initial color mode
 const modeToggleBtn = document.querySelector(".toggleBtn");
-let isLightMode = localStorage.getItem("colorMode") === "light";
+let isdarkmode = localStorage.getItem("colorMode") === "dark";
 
 // Function to toggle color mode
 function toggleColorMode() {
-    isLightMode = !isLightMode;
-    if (isLightMode) {
-        document.body.classList.add("lightmode");
-        localStorage.setItem("colorMode", "light");
-    } else {
-        document.body.classList.remove("lightmode");
+    isdarkmode = !isdarkmode;
+    if (isdarkmode) {
+        document.body.classList.add("darkmode");
         localStorage.setItem("colorMode", "dark");
+    } else {
+        document.body.classList.remove("darkmode");
+        localStorage.setItem("colorMode", "light");
     }
 }
 
 // Set initial color mode immediately upon page load
-if (isLightMode) {
-    document.body.classList.add("lightmode");
+if (isdarkmode) {
+    document.body.classList.add("darkmode");
 } else {
-    localStorage.setItem("colorMode", "dark");
+    localStorage.setItem("colorMode", "light");
 }
 
 // Attach toggle event listener to the toggle button
@@ -27,17 +27,6 @@ modeToggleBtn.addEventListener("click", toggleColorMode);
 
 
 document.addEventListener("DOMContentLoaded", function () {
-
-
-    // Black and light mode code ============ start =====>
-    // const modeToggleBtn = document.querySelector(".toggleBtn");
-
-    // function toggleColorMode() {
-    //     document.body.classList.toggle("lightmode");
-    // }
-    // modeToggleBtn.addEventListener("click", toggleColorMode);
-
-    // sticky header on scroll ============ start =====>
     
     const headers = document.querySelector("header");
     function handleScroll() {
@@ -54,19 +43,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // mobile menu code ============ start =====>
-    let searchIcon = document.querySelector(".search-icon");
-    let searchForm = document.querySelector(".search-form");
-    let svg1 =
-        '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M7.333 12.667A5.333 5.333 0 1 0 7.333 2a5.333 5.333 0 0 0 0 10.667ZM14 14l-2.9-2.9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
-    let svg2 =
-        '<svg fill="#fff" xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>';
-    let isSvg1 = true;
-    searchIcon.addEventListener("click", function () {
-        searchIcon.innerHTML = isSvg1 ? svg2 : svg1;
-        isSvg1 = !isSvg1;
+    // let searchIcon = document.querySelector(".search-icon");
+    // let searchForm = document.querySelector(".search-form");
+    // let svg1 =
+    //     '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M7.333 12.667A5.333 5.333 0 1 0 7.333 2a5.333 5.333 0 0 0 0 10.667ZM14 14l-2.9-2.9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
+    // let svg2 =
+    //     '<svg fill="#fff" xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>';
+    // let isSvg1 = true;
+    // searchIcon.addEventListener("click", function () {
+    //     searchIcon.innerHTML = isSvg1 ? svg2 : svg1;
+    //     isSvg1 = !isSvg1;
 
-        searchForm.classList.toggle("search-bar-show");
-    });
+    //     searchForm.classList.toggle("search-bar-show");
+    // });
 
     const toggleslideBtn = document.querySelector(".toggle-slide-btn");
     const cancelBtn = document.querySelector(".cancel-btn");

@@ -497,7 +497,7 @@ header>.container {
   justify-content: space-between;
 }
 
-.logo-second {
+.logo-first {
   display: none;
 }
 
@@ -570,8 +570,7 @@ header ul .dropdown ul .dropdown ul {
 }
 
 .toggle-slide-btn,
-.cancel-btn,
-.search-form {
+.cancel-btn{
   display: none;
 }
 
@@ -592,15 +591,7 @@ header form button {
 }
 
 header .mob-search-btn {
-  display: block;
-  width: 35px;
-  height: 35px;
-  text-align: center;
-  line-height: 2;
-  border-radius: 50%;
-  justify-content: center;
   cursor: pointer;
-  display: flex;
   user-select: none;
 }
 
@@ -1666,7 +1657,7 @@ footer .footer-category ul {
 
   .digiplan-container-bg-1 .big-head {
     font-size: 18px !important;
-    line-height: 28px !important;
+    line-height: 30px !important;
   }
 
   .digiplan-container-bg-1 .category-title {
