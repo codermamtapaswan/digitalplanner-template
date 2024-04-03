@@ -2,8 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: Nunito Sans; */
   font-family: 'Gilroy', sans-serif;
+  
 }
 
 :root {
@@ -122,7 +122,8 @@ a {
 
 p {
   line-height: 30px;
-  font-family: 'Poppins';
+  font-family: "Poppins", sans-serif;
+ 
 }
 
 
