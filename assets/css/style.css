@@ -108,6 +108,11 @@
   border: 1px solid rgba(248, 248, 248, 0.1);
 }
 
+.darkmode .all-page :is(p, li, h2, h3, h4, h5, h6, summary):not(#breadcrumbs, .tableofcontent ul li, .site-social-links ul li) a {
+  border-bottom: 2px solid var(--hover);
+  color: var(--hover);
+}
+
 /* # General
 =================================================*/
 body {
@@ -156,6 +161,8 @@ form input {
   color: var(--hover-1);
   font-weight: 600;
 }
+
+
 
 .all-page :is(p, li, h2, h3, h4, h5, h6, summary):not(#breadcrumbs, .tableofcontent ul li, .site-social-links ul li) a:hover {
   border-bottom: none;
