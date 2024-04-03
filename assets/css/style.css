@@ -2,11 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Gilroy', sans-serif;
-  
+  font-family: "Poppins", sans-serif;
 }
 
 :root {
+  --font-gilory : 'Gilroy', sans-serif;
   --primary-color: #fff;
   --secondary-color: #c7c5c52b;
   --color: #000;
@@ -121,9 +121,7 @@ a {
 }
 
 p {
-  line-height: 30px;
-  font-family: "Poppins", sans-serif;
- 
+  line-height: 30px; 
 }
 
 
@@ -138,6 +136,12 @@ form input {
 .bg-color-card {
   background-color: var(--secondary-color);
 }
+
+:is(h1,h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6,.site-title,.big-head,.subhead,h2>strong)
+ {
+  font-family: var(--font-gilory) !important;
+}
+
 
 .all-page ul li:not(.tableofcontent ul li, .site-social-links ul li)::before,
 .accordions summary::after,
@@ -182,6 +186,7 @@ form input {
 .seperator div {
   font-size: 40px;
   font-weight: 700;
+  font-family: var(--font-gilory);
 }
 
 .seperator::before {
