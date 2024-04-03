@@ -577,7 +577,7 @@ header ul .dropdown ul .dropdown ul {
 }
 
 
-
+header .search-btn,
 header .mob-search-btn {
   cursor: pointer;
   stroke: var(--color);

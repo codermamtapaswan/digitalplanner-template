@@ -12,6 +12,7 @@
   --color: #000;
 
   --hover: rgba(19, 204, 98, 1);
+  --hover-1:rgba(1, 125, 171, 1);
 
 
   --gradient: linear-gradient(212deg,
@@ -150,9 +151,9 @@ form input {
 }
 
 .all-page :is(p, li, h2, h3, h4, h5, h6, summary):not(#breadcrumbs, .tableofcontent ul li, .site-social-links ul li) a {
-  border-bottom: 2px solid var(--hover);
+  border-bottom: 2px solid var(--hover-1);
   transition: all 0.3s;
-  color: var(--hover);
+  color: var(--hover-1);
   font-weight: 600;
 }
 
@@ -217,7 +218,15 @@ form input {
 }
 
 .site-social-links ul li a:hover {
-  background: var(--primary-color);
+  background: var(--gradient);
+  border: 2px solid transparent;
+
+}
+.site-social-links ul li a:hover {
+  background: var(--gradient);
+}
+.site-social-links ul li a:hover svg{
+  filter: invert(1) !important;
 }
 
 
@@ -378,6 +387,7 @@ header ul li ul a {
 
 .toc-header span {
   color: #fff;
+  font-weight: 400;
 }
 
 .toc-body::-webkit-scrollbar-thumb {
