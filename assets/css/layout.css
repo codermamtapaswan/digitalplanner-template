@@ -340,7 +340,7 @@ blockquote,
   text-transform: uppercase;
 }
 
-.author,
+.auth-name,
 .category-title,
 .date {
   width: fit-content;
