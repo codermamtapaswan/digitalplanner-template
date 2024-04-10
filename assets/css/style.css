@@ -28,13 +28,8 @@
   --color: #fff;
 }
 
-
-.darkmode .logo-first {
-  display: block !important;
-}
-
-.darkmode .logo-second {
-  display: none;
+.darkmode #dp-logo img{
+  filter:brightness(0) invert(1);
 }
 
 .darkmode .seperator::before,
@@ -111,7 +106,7 @@
 .darkmode .all-page :is(p, li, h2, h3, h4, h5, h6, summary):not(#breadcrumbs, .tableofcontent ul li, .site-social-links ul li) a {
   border-bottom: 2px solid var(--hover);
   color: var(--hover);
-}
+} 
 
 /* # General
 =================================================*/
@@ -178,7 +173,7 @@ form input {
   background-color: #c7c7c7;
 }
 
-:is(.author, .category-title):hover {
+:is(.auth-name, .category-title):hover {
   text-decoration: underline;
 }
 
